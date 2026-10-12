@@ -1,0 +1,291 @@
+  <!-- =====================================================================
+       SECTIONS (new order). Backgrounds alternate: hero (light) -> dark -> light -> ...
+       Swap "section--light" / "section--dark" on any <section> to flip its colours.
+       ===================================================================== -->
+
+  <!-- 01 HOW WE WORK (dark) -->
+  <section id="services" class="section section--dark">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">01</span> How we work</h2>
+
+      <div class="process">
+        <div class="step reveal">
+          <div class="n">1</div>
+          <div>
+            <h3>We understand your business</h3>
+            <p>Before any code, we learn how your bills, guests, and stock actually move — the parts of your day that eat the most time and the ones you'd never trust to a template.</p>
+          </div>
+          <!-- Mini screen 1: a ledger being scanned (bills, stock, guests, dues) -->
+          <div class="viz scan" aria-hidden="true">
+            <div class="viz-bar"><i></i><i></i><i></i><b>discover</b></div>
+            <div class="viz-body">
+              <span class="r" style="--i:0;--b:46%">bills<em></em></span>
+              <span class="r" style="--i:1;--b:32%">stock<em></em></span>
+              <span class="r" style="--i:2;--b:56%">guests<em></em></span>
+              <span class="r" style="--i:3;--b:38%">dues<em></em></span>
+              <u class="scanline"></u>
+            </div>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="n">2</div>
+          <div>
+            <h3>We design &amp; curate</h3>
+            <p>A personalised, AI-integrated app built around how you actually work — not a generic dashboard. We walk you through it before anything ships.</p>
+          </div>
+          <!-- Mini screen 2: code typing itself out (the app being built) -->
+          <div class="viz code" aria-hidden="true">
+            <div class="viz-bar"><i></i><i></i><i></i><b>build</b></div>
+            <div class="viz-body">
+              <span class="ln" style="--i:0;--w:17ch"><b>def</b> run(invoice):</span>
+              <span class="ln" style="--i:1;--w:21ch">  <b>if</b> invoice.overdue:</span>
+              <span class="ln" style="--i:2;--w:19ch">    send_reminder()</span>
+              <span class="ln" style="--i:3;--w:21ch">  sync_sheet(invoice)</span>
+              <span class="ln" style="--i:4;--w:19ch">  <b>return</b> <s>"ok"</s><i class="caret"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="n">3</div>
+          <div>
+            <h3>We host &amp; service it</h3>
+            <p>Live, monitored, and maintained — we stay on as your business changes, so the software keeps up with you.</p>
+          </div>
+          <!-- Mini screen 3: growth chart drawing upward (the live app and the business growing) -->
+          <div class="viz grow" aria-hidden="true">
+            <div class="viz-bar"><i></i><i></i><i></i><b>growth</b></div>
+            <div class="viz-body">
+              <svg viewBox="0 0 148 72" preserveAspectRatio="xMidYMid meet">
+                <path class="base" d="M0 71.5H148"/>
+                <rect class="bar" style="--i:0" x="6" y="60" width="12" height="12" rx="2"/>
+                <rect class="bar" style="--i:1" x="27" y="56" width="12" height="16" rx="2"/>
+                <rect class="bar" style="--i:2" x="48" y="52" width="12" height="20" rx="2"/>
+                <rect class="bar" style="--i:3" x="69" y="46" width="12" height="26" rx="2"/>
+                <rect class="bar" style="--i:4" x="90" y="40" width="12" height="32" rx="2"/>
+                <rect class="bar" style="--i:5" x="111" y="32" width="12" height="40" rx="2"/>
+                <rect class="bar" style="--i:6" x="132" y="22" width="12" height="50" rx="2"/>
+                <polyline class="trend" pathLength="1" points="12,50 33,46 54,42 75,36 96,30 117,22 138,12"/>
+                <circle class="ping" cx="138" cy="12" r="3"/>
+                <circle class="end" cx="138" cy="12" r="3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 PROJECTS (light) -->
+  <section id="projects" class="section section--light">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">02</span> Few of our Projects</h2>
+
+      <!-- Wrap each project name in an <a href="..."> to your live app when ready -->
+      <div class="row reveal">
+        <div class="tag">2026</div>
+        <div>
+          <h3><a href="#">Restaurant Inventory &amp; Procurement</a></h3>
+          <p>Stock, kitchen issues, waste, and a vendor ledger with running due balances — deployed on a live AWS server for a working restaurant(A Stock Management App).</p>
+          <div class="stack"><span>Node</span><span>Express</span><span>SQLite</span><span>AWS EC2</span></div>
+        </div>
+      </div>
+
+      <div class="row reveal">
+        <div class="tag">2026</div>
+        <div>
+          <h3><a href="#">Work Together App</a></h3>
+          <p>Create a privately hosted "pod" with your colleague and share your tasks and watch it get complete(A Productive App).</p>
+          <div class="stack"><span>Python</span><span>Render</span><span>HTML</span><span>CSS</span></div>
+        </div>
+      </div>
+
+      <div class="row reveal">
+        <div class="tag">2026</div>
+        <div>
+          <h3><a href="#">Expense Tracker</a></h3>
+          <p>Add and categorize expenses, see category totals as a percentage breakdown, filter by date or category.</p>
+          <div class="stack"><span>Vanilla JS</span><span>Chart</span><span>GitHub Pages</span><span>HTML</span><span>CSS</span></div>
+        </div>
+      </div>
+
+      <div class="row reveal">
+        <div class="tag">2026</div>
+        <div>
+          <h3><a href="#">Bill Tracker</a></h3>
+          <p>Tracks due dates and autopay status per bill, with a 3-day due-soon flag and a monthly summary view.</p>
+          <div class="stack"><span>Vanilla JS</span><span>Express</span><span>SQLite</span></div>
+        </div>
+      </div>
+
+      <div class="row reveal">
+        <div class="tag">soon</div>
+        <div>
+          <h3><a href="#">QR Guest Feedback</a></h3>
+          <p>Scan at checkout — happy guests get steered to a public review, low ratings stay internal and pops on your whatsapp instead of going public.</p>
+          <div class="stack"><span>JS</span><span>Python</span><span>SQL</span></div>
+        </div>
+      </div>
+
+      <!-- Websites row: moved INSIDE the projects section (it used to sit outside any section) -->
+      <div class="row reveal">
+        <div class="tag">2026</div>
+        <div>
+          <h3><a href="#">Websites</a></h3>
+          <p><a href ="https://hotelmahal.in/">Hotel Mahal</a></p>
+          <p><a href="https://www.hotelredvelvet.in/">Hotel Red Velvet</a></p>
+          <p><a href="https://shyam-smriti.onrender.com/">Charitable Project</a></p>
+          <div class="stack"><span>JS</span><span>HTML</span><span>CSS Flex & Grid</span><span>Render</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 AUTOMATION & AI (dark) - NEW -->
+  <section id="automation" class="section section--dark">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">03</span> Automation &amp; AI</h2>
+
+      <!-- Intro text on the left, 3D "automation stack" scene on the right (stacks under the text on phones) -->
+      <div class="auto-top">
+        <div>
+          <p class="section-intro reveal">The repetitive work in your business doesn't need a person every time. We connect your tools so it runs by itself.</p>
+          <p class="auto-flow reveal">DATA<span>→</span>WORKFLOW<span>→</span>AI<span>→</span>APP</p>
+        </div>
+
+        <!-- 3D scene: four floating layers with a point of light travelling up through them (purely decorative) -->
+        <div class="stack3d reveal" aria-hidden="true">
+          <div class="stack-scene">
+            <div class="plate p1">DATA</div>
+            <div class="plate p2">WORKFLOW</div>
+            <div class="plate p3">AI</div>
+            <div class="plate p4">APP</div>
+            <i class="packet"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card reveal">
+          <div class="tag">n8n</div>
+          <h3>Workflow automation</h3>
+          <p>n8n workflows that move data and trigger tasks between your tools, without anyone clicking.</p>
+        </div>
+        <div class="card reveal">
+          <div class="tag">Email</div>
+          <h3>Invoice &amp; email follow-ups</h3>
+          <p>Overdue invoices get a polite reminder email automatically, so payments don't slip.</p>
+        </div>
+        <div class="card reveal">
+          <div class="tag">Sheets · AI</div>
+          <h3>Sheets &amp; AI-assisted tools</h3>
+          <p>Google Sheets kept in sync with your apps, plus AI helpers that draft and sort routine work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 CLIENT REVIEWS (light) -->
+  <!-- PLACEHOLDERS: the quote text in ALL of these reviews is sample wording for layout only.
+       - R Prasad and S Jaiswal: replace the quote with their real words (and get their OK) before promoting the site.
+       - The other three are generic placeholders: replace or delete them when you have real reviews. -->
+  <section id="reviews" class="section section--light">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">04</span> Client Reviews</h2>
+
+      <div class="reviews">
+        <!-- Featured review 1 -->
+        <figure class="review review--lead reveal">
+          <blockquote>
+            <p>“We got our website quickly, it looks professional and works smoothly on phones. Exactly what we needed.”</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">R Prasad</span>
+            <span class="biz">Bought a website</span>
+          </figcaption>
+        </figure>
+
+        <!-- Featured review 2 -->
+        <figure class="review review--lead reveal">
+          <blockquote>
+            <p>“The approval app removed the back-and-forth. Requests that used to wait on calls now get approved in one place.”</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">S Jaiswal</span>
+            <span class="biz">Automated approval app, hotel chain</span>
+          </figcaption>
+        </figure>
+
+        <figure class="review reveal">
+          <blockquote>
+            <p>“They took the time to understand how our shop actually runs. The app saves us hours every week.”</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">Rohan S.</span>
+            <span class="biz">Owner, local retail store</span>
+          </figcaption>
+        </figure>
+
+        <figure class="review reveal">
+          <blockquote>
+            <p>“Stock and vendor dues used to live in notebooks. Now everything is in one place and always up to date.”</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">Meera K.</span>
+            <span class="biz">Manager, restaurant</span>
+          </figcaption>
+        </figure>
+
+        <figure class="review reveal">
+          <blockquote>
+            <p>“Clear communication, quick fixes, and they stayed on after launch. Easy to work with.”</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">Anil P.</span>
+            <span class="biz">Director, small hotel</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 ABOUT US (dark) - MOVED here from the top -->
+  <section id="about" class="section section--dark about">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">05</span> About us</h2>
+      <p class="reveal"><strong>DevDuo Studio is a two-person web development studio in India that builds custom web apps and automation for businesses.</strong> We're two developers who started out running businesses ourselves before we started building software for others. ...</p>
+
+      <!-- Two equal cells. Each cell is .ledger-cell (fixes the old double padding). -->
+      <div class="ledger-strip mono reveal">
+        <div class="ledger-cell"><div class="num">India</div><div class="lbl">based</div></div>
+        <div class="ledger-cell"><div class="num">Automating how businesses run</div><div class="lbl">focus</div></div>
+      </div>
+
+      <!-- Tech stack rows -->
+      <div class="skills reveal">
+        <div class="skill-row">
+          <div class="skill-label">Frontend</div>
+          <div class="skill-tags"><span>JS</span><span>React</span><span>HTML</span><span>CSS</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Backend</div>
+          <div class="skill-tags"><span>Node</span><span>Express</span><span>Flask</span><span>Python</span><span>SQLite</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Infra</div>
+          <div class="skill-tags"><span>AWS / Cloud Hosting</span><span>n8n</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER (light) -->
+  <footer id="contact" class="section section--light">
+    <div class="wrap footer-inner">
+      <div class="reveal">
+        <h2>Let's talk</h2>
+        <p>Tell us what your business is spending too much time tracking by hand.</p>
+        <a class="cta" href="mailto:hello@devduo.studio">devduostudio26@gmail.com</a>
+      </div>
+      <div class="fineprint reveal">Shudh &amp; Ankita<br>DevDuo Studio, est. 2026</div>
+    </div>
+  </footer>

@@ -1,0 +1,447 @@
+  /* =====================================================================
+     DEVDUO STUDIO - STYLES
+     Sections are grouped: 1) colours  2) base  3) layout  4) hero/masthead
+     5) shared section parts  6) each section  7) footer
+     ===================================================================== */
+
+  /* ---------- 1) COLOURS (edit here to re-theme the whole site) ---------- */
+  :root{
+    /* The two alternating section backgrounds */
+    --bg-light:#F5EFE6;          /* light beige sections */
+    --bg-dark:#3B2A20;           /* deep brown sections  */
+
+    /* Consistent vertical padding for every section (top and bottom) */
+    --section-pad:clamp(3.5rem, 8vw, 6rem);
+
+    /* Original brand colours (hero + masthead still use these) */
+    --paper:#FAF6EF; --beige:#F0E7D8;
+
+    /* Default (LIGHT section) text colours.
+       Slightly deeper than before so they stay readable on #F5EFE6. */
+    --ink:#221D17;               /* main text            */
+    --ink-dim:#6B6152;           /* secondary text       */
+    --line:#DED0B4;              /* borders / dividers   */
+    --gold:#7F5E26;              /* small labels, accent */
+    --wine:#5C2A2A;              /* links, highlights    */
+    --num-fill:var(--beige);     /* fill of big step numbers */
+
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+
+  /* ---------- 2) BASE ---------- */
+  *{box-sizing:inherit; margin:0; padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  html,body{height:100%;}
+  body{
+    background:var(--bg-light); color:var(--ink);
+    font-family:'Fraunces', Georgia, serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'IBM Plex Mono', ui-monospace, monospace;}
+  ::selection{ background:var(--gold); color:var(--paper); }
+
+  /* ---------- 3) LAYOUT ---------- */
+  /* .page is now full width so section backgrounds can touch both screen edges.
+     .wrap is the centred content column that lives inside every section. */
+  .page{ width:100%; }
+  .wrap{ max-width:860px; margin:0 auto; padding:0 2.5rem; }
+  @media (max-width:640px){ .wrap{ padding:0 1.35rem; } }
+
+  /* ---------- 4) MASTHEAD + HERO (unchanged except nav wrapping) ---------- */
+  .masthead{
+    display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;
+    background:rgba(250,246,239, .35); border-radius: 4px; 
+    padding:.9rem 1.3rem; border:1px solid rgba(255, 255, 255, .25); backdrop-filter: blur(10px); -webkit-backdrop-filter:blur(10px);  
+  }
+  .masthead .mark{font-size:1.15rem; font-weight:600; letter-spacing:.01em;}
+  .masthead .mark em{ color: brown; font-style:italic; font-weight:400; }
+  /* NEW: nav can wrap onto a second line on small screens (6 links now) */
+  .masthead nav{display:flex; flex-wrap:wrap; gap:.4rem 1.8rem;}
+  .masthead nav a{ color:black; text-decoration:none; font-size:.82rem; letter-spacing:.03em; transition:color .15s; }
+  .masthead nav a{ background:linear-gradient(currentColor,currentColor) 0 100% / 0 1px no-repeat; transition:color .15s, background-size .3s ease; }
+  .masthead nav a:hover, .masthead nav a:focus-visible{ color:var(--wine); background-size:100% 1px; }
+  @media (max-width:640px){ .masthead nav{ gap:.4rem 1.1rem; } }
+
+  html, body{
+    overflow-x: hidden;
+  }
+.hero-full{
+  position:relative; left:50%; right:50%;
+  margin-left:-50vw; margin-right:-50vw; width:100vw;
+  overflow:hidden; min-height:min(88vh, 760px);
+  display:flex; flex-direction:column;
+}
+@media (max-width:640px){ .hero-full{ min-height:78vh; } }
+
+.hero-gesture{ position:absolute; inset:0; z-index:0; background:var(--beige); }
+.hero-gesture canvas, .hero-gesture video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.12); transform-origin: center;}
+.hero-scrim{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+}
+
+.hero-inner{
+  position:relative; z-index:2; flex:1; display:flex; flex-direction:column; justify-content:space-between;
+  max-width:860px; width:100%; margin:0 auto; padding:1.6rem 2.5rem 3.5rem;
+}
+@media (max-width:640px){ .hero-inner{ padding:1.2rem 1.35rem 2.5rem; } }
+
+.hero-content{ max-width:56ch; }
+.hero-content h1{
+  font-size:clamp(2.3rem,5.2vw,3.5rem); font-weight:500; line-height:1.14; letter-spacing:-.01em;
+}
+.hero-content h1 em{ font-style:italic; font-weight:400; color: brown; }
+.hero-content p{ color:var(--ink-dim); font-size:1.08rem; max-width:46ch; margin-top:1.3rem; }
+
+  /* ---------- 5) SECTIONS: alternating backgrounds ----------
+     Every section gets class "section" plus EITHER "section--light" or
+     "section--dark". Dark sections simply re-define the colour variables,
+     so all text, borders and accents inside them switch to cream automatically.
+     To flip a section, swap its class. To change a colour, edit :root above. */
+  .section{ padding:var(--section-pad) 0; }
+
+  .section--light{
+    background:var(--bg-light);
+    color:var(--ink);
+  }
+
+  .section--dark{
+    --ink:#F5EFE6;                        /* cream text        (contrast ~12:1) */
+    --ink-dim:#CDBFAA;                    /* softer cream text (contrast ~7.5:1) */
+    --line:rgba(245,239,230,.22);         /* cream borders     */
+    --gold:#E0B872;                       /* light gold labels (contrast ~7.3:1) */
+    --wine:#F0CFA8;                       /* links / highlights in light tan    */
+    --num-fill:transparent;               /* outline-only step numbers          */
+    background:var(--bg-dark);
+    color:var(--ink);
+  }
+  .section--dark ::selection{ background:var(--gold); color:var(--bg-dark); }
+
+  /* Section heading with index number (01, 02, ...) */
+  h2{
+    font-weight:500; font-size:1.55rem; display:flex; align-items:baseline; gap:.7rem;
+    border-bottom:1px solid var(--line); padding-bottom:.8rem; margin-bottom:2.2rem;
+  }
+  h2 .idx{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--gold); }
+
+  /* Short intro line under a heading */
+  .section-intro{ color:var(--ink-dim); font-size:1.02rem; max-width:60ch; margin:-0.6rem 0 2rem; }
+
+  /* ---------- 6a) SERVICES: 3-step process ---------- */
+  .process{ position:relative; }
+  .step{
+    display:grid; grid-template-columns:3.2rem 1fr auto; gap:1.6rem; align-items:start;
+    padding:2rem 0; position:relative;
+  }
+  .step:first-child{ padding-top:0; }      /* no extra gap under the heading */
+  .step:last-child{ padding-bottom:0; }    /* section padding handles the bottom */
+  .step + .step{ border-top:1px solid var(--line); }
+  .step .n{ font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:2.1rem; color:var(--num-fill); -webkit-text-stroke:1px var(--gold); }
+  .step h3{ font-weight:600; font-size:1.18rem; }
+  .step p{ color:var(--ink-dim); font-size:.98rem; margin-top:.5rem; max-width:54ch; }
+  /* phones: the mini screen (.viz) drops under the step text */
+  @media (max-width:560px){
+    .step{ grid-template-columns:2.4rem 1fr; gap:1rem; }
+    .viz{ grid-column:2; width:min(100%, 200px); margin:.9rem 0 0; align-self:start; }
+  }
+
+  /* ---------- 6b) PROJECTS ---------- */
+  .row{
+    display:grid; grid-template-columns:auto 1fr; gap:.2rem 1.4rem;
+    padding:1.1rem 0; border-bottom:1px solid var(--line);
+  }
+  .row:first-of-type{ padding-top:0; }
+  .row:last-child{ border-bottom:none; padding-bottom:0; }
+  .row .tag{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--gold); padding-top:.4rem; white-space:nowrap; }
+  .row h3{ font-weight:600; font-size:1.1rem; }
+  .row h3 a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); transition:border-color .15s, color .15s; }
+  .row h3 a:hover, .row h3 a:focus-visible{ color:var(--wine); border-color:var(--wine); }
+  .row p{ color:var(--ink-dim); font-size:.94rem; margin-top:.4rem; max-width:56ch; }
+  .row p a{ color:var(--wine); text-decoration:none; border-bottom:1px solid var(--line); transition:border-color .15s; }
+  .row p a:hover, .row p a:focus-visible{ border-color:var(--wine); }
+  .row .stack{ margin-top:.6rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-dim); display:flex; gap:.9rem; flex-wrap:wrap; }
+  .row .stack span::before{ content:"·"; margin-right:.5em; color:var(--line); }
+  .row .stack span:first-child::before{ content:none; }
+  @media (max-width:480px){ .row{ gap:.2rem 1rem; } }
+
+  /* ---------- 6c) AUTOMATION & AI: 3 cards ---------- */
+  .cards{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1.6rem; }
+  .card{ border-top:2px solid var(--gold); padding-top:1rem; transition:transform .3s ease; }
+  .card:hover{ transform:translateY(-4px); }
+  .card .tag{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--gold); }
+  .card h3{ font-weight:600; font-size:1.1rem; margin-top:.45rem; }
+  .card p{ color:var(--ink-dim); font-size:.94rem; margin-top:.5rem; }
+  @media (max-width:760px){
+    .cards{ grid-template-columns:1fr; gap:0; }
+    .card{ border-top:1px solid var(--line); padding:1.3rem 0; }
+    .card:first-child{ border-top:2px solid var(--gold); }
+    .card:last-child{ padding-bottom:0; }
+  }
+
+  /* ---------- 6d) CLIENT REVIEWS ---------- */
+  /* 6-column grid: the two featured reviews take 3 columns each (top row),
+     the other reviews take 2 columns each (second row). */
+  .reviews{ display:grid; grid-template-columns:repeat(6, 1fr); gap:1.4rem; }
+  .review{
+    grid-column:span 2;
+    border:1px solid var(--line); padding:1.4rem 1.3rem;
+    display:flex; flex-direction:column; justify-content:space-between; gap:1.2rem;
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .review--lead{ grid-column:span 3; padding:1.7rem 1.6rem; }
+  .review--lead blockquote{ font-size:1.14rem; }
+  .review blockquote{ font-style:italic; font-size:1.02rem; line-height:1.55; }
+  .review .name{ display:block; font-weight:600; font-size:.98rem; }
+  .review .biz{ display:block; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--gold); margin-top:.2rem; }
+  .review:hover{ transform:translateY(-4px); border-color:var(--gold); box-shadow:0 10px 24px -14px rgba(59,42,32,.45); }
+  @media (max-width:760px){
+    .reviews{ grid-template-columns:1fr; }
+    .review, .review--lead{ grid-column:auto; }
+  }
+
+  /* ---------- 6e) ABOUT US ---------- */
+  .about p{ color:var(--ink-dim); font-size:1.02rem; max-width:60ch; }
+
+  /* Two equal cells (India-based / focus). Uses a grid so both are the same
+     width, and a child selector (.ledger-cell) so inner text is NOT padded twice. */
+  .ledger-strip{
+    display:grid; grid-template-columns:1fr 1fr;
+    margin-top:1.8rem; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .ledger-cell{ padding:1rem 1.2rem; }
+  .ledger-cell:first-child{ padding-left:0; }
+  .ledger-cell + .ledger-cell{ border-left:1px solid var(--line); }
+  .ledger-cell .num{ font-size:1rem; color:var(--wine); }
+  .ledger-cell .lbl{ font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--ink-dim); margin-top:.25rem; }
+  @media (max-width:520px){
+    .ledger-strip{ grid-template-columns:1fr; }
+    .ledger-cell{ padding:.9rem 0; }
+    .ledger-cell + .ledger-cell{ border-left:none; border-top:1px solid var(--line); }
+  }
+
+  /* Tech stack rows (Frontend / Backend / Infra): same rhythm as the Projects rows */
+  .skills{ margin-top:0; }
+  .skill-row{
+    display:grid; grid-template-columns:6.5rem 1fr; gap:1.2rem;
+    padding:.9rem 0; border-top:1px solid var(--line); align-items:baseline;
+  }
+  .skill-row:first-child{ border-top:none; }
+  .skill-row:last-child{ padding-bottom:0; }
+  .skill-label{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--gold); }
+  .skill-tags{
+    font-family:'IBM Plex Mono',monospace; font-size:.85rem; color:var(--ink-dim);
+    display:flex; flex-wrap:wrap; gap:.9rem;
+  }
+  .skill-tags span::before{ content:"·"; margin-right:.6em; color:var(--line); }
+  .skill-tags span:first-child::before{ content:none; }
+  @media (max-width:480px){ .skill-row{ grid-template-columns:4.8rem 1fr; gap:.8rem; } }
+
+  /* ---------- 7) FOOTER / CONTACT (light section) ---------- */
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1.5rem;
+  }
+  footer h2{ border:none; padding:0; margin:0 0 .6rem 0; }
+  footer p{ color:var(--ink-dim); font-size:.98rem; max-width:40ch; }
+  .cta{
+    display:inline-block; margin-top:1.2rem; background:var(--wine); color:var(--paper);
+    font-family:'IBM Plex Mono',monospace; font-size:.85rem; font-weight:500;
+    padding:.8rem 1.4rem; text-decoration:none; transition:background .15s, transform .2s ease;
+  }
+  .cta:hover, .cta:focus-visible{ background:var(--ink); transform:translateY(-2px); }
+  .fineprint{ color:var(--ink-dim); font-size:.75rem; text-align:right; font-family:'IBM Plex Mono',monospace; }
+  @media (max-width:640px){ .fineprint{ text-align:left; } }
+
+
+  /* =====================================================================
+     8) "HOW WE WORK" MINI SCREENS (pure CSS + one small inline SVG)
+     One tiny animated "screen" per step:
+       1 Discover  - a ledger being scanned line by line
+       2 Build     - code being typed
+       3 Live      - a growth chart drawing upward
+     They use --gold / --line, so they follow the section colours.
+     Make them bigger/smaller with --vw on .viz. Change speed with the animation durations.
+     ===================================================================== */
+  .viz{
+    --vw:172px; width:var(--vw); flex:none; align-self:center; margin-right:.4rem;
+    border:1px solid var(--line); border-radius:8px; overflow:hidden;
+    background:transparent; background:color-mix(in srgb, var(--gold) 6%, transparent);
+    font-family:'IBM Plex Mono',monospace; color:var(--ink-dim);
+  }
+  .viz-bar{ display:flex; align-items:center; gap:4px; height:20px; padding:0 8px; border-bottom:1px solid var(--line); }
+  .viz-bar i{ width:5px; height:5px; border-radius:50%; background:var(--gold); opacity:.45; }
+  .viz-bar b{ margin-left:auto; font-weight:400; font-size:.5rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); }
+  .viz-body{ position:relative; height:88px; padding:8px 10px; }
+
+  /* --- 1) Discover: rows light up as a scan line passes over them --- */
+  .scan .r{
+    display:flex; align-items:center; gap:8px; height:14px; margin-bottom:4px; padding:0 4px; border-radius:3px;
+    font-size:.56rem; letter-spacing:.04em;
+    animation:row-hit 4s linear infinite; animation-delay:calc(.45s + var(--i) * .76s);
+  }
+  .scan .r em{
+    display:block; height:3px; border-radius:2px; margin-left:auto; width:var(--b); background:var(--ink-dim); opacity:.5;
+    animation:bar-on 4s linear infinite; animation-delay:calc(.45s + var(--i) * .76s);
+  }
+  .scanline{
+    position:absolute; left:6px; right:6px; top:8px; height:1px; background:var(--gold);
+    box-shadow:0 0 8px var(--gold); opacity:0; animation:scan 4s linear infinite;
+  }
+  @keyframes scan{
+    0%{ transform:translateY(0); opacity:0; } 6%{ opacity:1; }
+    80%{ transform:translateY(70px); opacity:1; } 90%,100%{ transform:translateY(70px); opacity:0; }
+  }
+  @keyframes row-hit{
+    0%{ background:transparent; }
+    4%,18%{ background:rgba(224,184,114,.16); }
+    32%,100%{ background:transparent; }
+  }
+  @keyframes bar-on{
+    0%{ background:var(--ink-dim); opacity:.5; }
+    4%,22%{ background:var(--gold); opacity:1; }
+    36%,100%{ background:var(--ink-dim); opacity:.5; }
+  }
+
+  /* --- 2) Build: lines of code type themselves out, then clear and repeat --- */
+  .code .ln{
+    display:block; white-space:pre; overflow:hidden; width:var(--w);
+    font-size:.58rem; line-height:1.5; color:var(--ink-dim);
+    animation:type 7s steps(22, end) infinite backwards; animation-delay:calc(var(--i) * .55s);
+  }
+  .code .ln b{ font-weight:400; color:var(--gold); }       /* keywords */
+  .code .ln s{ text-decoration:none; color:var(--wine); }  /* strings / values */
+  .caret{ display:inline-block; width:5px; height:10px; margin-left:1px; vertical-align:-1px; background:var(--gold); animation:blink 1s steps(2, start) infinite; }
+  @keyframes type{
+    0%{ width:0; } 25%{ width:var(--w); } 88%{ width:var(--w); } 94%,100%{ width:0; }
+  }
+  @keyframes blink{ to{ visibility:hidden; } }
+
+  /* --- 3) Live: bars grow, a line draws upward, the end point pulses --- */
+  .grow .viz-body{ padding:8px 10px; }
+  .grow svg{ display:block; width:100%; height:100%; overflow:visible; }
+  .grow .base{ stroke:var(--line); stroke-width:1; }
+  .grow .bar{
+    fill:var(--gold); opacity:.25; transform-box:fill-box; transform-origin:50% 100%;
+    animation:bar-up 6s ease-out infinite backwards; animation-delay:calc(var(--i) * .1s);
+  }
+  .grow .trend{
+    fill:none; stroke:var(--gold); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;
+    stroke-dasharray:1; animation:line-draw 6s ease-in-out infinite;
+  }
+  .grow .end{ fill:var(--wine); animation:dot-in 6s ease-in-out infinite; }
+  .grow .ping{ fill:none; stroke:var(--gold); stroke-width:1; opacity:0; transform-box:fill-box; transform-origin:center; animation:ping 6s ease-out infinite; }
+  @keyframes bar-up{ 0%{ transform:scaleY(0); } 18%,86%{ transform:scaleY(1); } 94%,100%{ transform:scaleY(0); } }
+  @keyframes line-draw{
+    0%,10%{ stroke-dashoffset:1; opacity:1; } 55%,86%{ stroke-dashoffset:0; opacity:1; } 94%,100%{ stroke-dashoffset:0; opacity:0; }
+  }
+  @keyframes dot-in{ 0%,52%{ opacity:0; } 60%,86%{ opacity:1; } 94%,100%{ opacity:0; } }
+  @keyframes ping{ 0%,56%{ opacity:0; transform:scale(1); } 62%{ opacity:.8; } 100%{ opacity:0; transform:scale(3.4); } }
+
+  /* =====================================================================
+     8b) AUTOMATION STACK (3D scene in the Automation & AI section)
+     Four floating layers - DATA, WORKFLOW, AI, APP - with a point of light
+     travelling up through them. It gently sways (not a full spin) so the
+     labels always stay readable. Tweak: --gap (space between layers),
+     --plate (layer size), animation durations.
+     ===================================================================== */
+  .auto-top{
+    display:grid; grid-template-columns:1fr 250px; gap:2rem; align-items:center;
+    margin-bottom:2.4rem;
+  }
+  .auto-top .section-intro{ margin:0; }
+  .auto-flow{
+    margin-top:1.2rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem;
+    letter-spacing:.08em; color:var(--gold);
+  }
+  .auto-flow span{ color:var(--ink-dim); margin:0 .5em; }
+
+  .stack3d{
+    --plate:132px; --gap:44px;
+    position:relative; width:100%; height:290px; perspective:1000px;
+    display:grid; place-items:center;
+  }
+  .stack-scene{
+    position:relative; width:var(--plate); height:var(--plate);
+    transform-style:preserve-3d;
+    transform:translateY(24px) rotateX(62deg) rotateZ(-35deg);
+    animation:stack-sway 10s ease-in-out infinite alternate;
+  }
+  @keyframes stack-sway{
+    from{ transform:translateY(24px) rotateX(62deg) rotateZ(-50deg); }
+    to  { transform:translateY(24px) rotateX(62deg) rotateZ(-20deg); }
+  }
+
+  /* each layer floats up and down a few pixels, out of step with the others */
+  .plate{
+    position:absolute; inset:0; border-radius:14px;
+    border:1px solid var(--gold);
+    background:transparent; background:color-mix(in srgb, var(--gold) 7%, transparent);
+    display:flex; align-items:flex-end; justify-content:flex-start; padding:9px 11px;
+    font-family:'IBM Plex Mono',monospace; font-size:.58rem; letter-spacing:.14em; color:var(--gold);
+    transform:translateZ(var(--z, 0px));            /* resting position (also used if animation is off) */
+    animation:plate-bob 6s ease-in-out infinite;
+  }
+  .plate::after{                     /* small node in the middle of every layer */
+    content:""; position:absolute; left:50%; top:50%; width:8px; height:8px; margin:-4px;
+    border-radius:50%; background:var(--gold); opacity:.35;
+    animation:node-pulse 4.2s linear infinite; animation-delay:var(--pd, 0s);
+  }
+  .plate.p1{ --z:0px;                         --pd:.2s;  animation-delay:0s;    }
+  .plate.p2{ --z:var(--gap);                  --pd:1.2s; animation-delay:-1.5s; }
+  .plate.p3{ --z:calc(var(--gap) * 2);        --pd:2.2s; animation-delay:-3s;   }
+  .plate.p4{ --z:calc(var(--gap) * 3);        --pd:3.1s; animation-delay:-4.5s; border-style:solid; background:color-mix(in srgb, var(--gold) 14%, transparent); }
+  @keyframes plate-bob{
+    0%,100%{ transform:translateZ(var(--z)); }
+    50%    { transform:translateZ(calc(var(--z) + 9px)); }
+  }
+  @keyframes node-pulse{
+    0%,12%  { opacity:1; transform:scale(1.9); box-shadow:0 0 14px var(--gold); }
+    30%,100%{ opacity:.35; transform:scale(1);  box-shadow:none; }
+  }
+
+  /* the point of light that rises through all four layers */
+  .packet{
+    position:absolute; left:50%; top:50%; width:10px; height:10px; margin:-5px;
+    border-radius:50%; background:var(--wine); box-shadow:0 0 16px 2px var(--gold);
+    animation:packet-rise 4.2s linear infinite;
+  }
+  @keyframes packet-rise{
+    0%   { transform:translateZ(0);                  opacity:0; }
+    6%   { opacity:1; }
+    74%  { transform:translateZ(calc(var(--gap) * 3)); opacity:1; }
+    82%,100%{ transform:translateZ(calc(var(--gap) * 3 + 20px)); opacity:0; }
+  }
+  /* soft floor shadow under the stack */
+  .stack3d::after{
+    content:""; position:absolute; left:50%; bottom:6px; width:150px; height:26px; margin-left:-75px;
+    background:radial-gradient(ellipse at center, rgba(0,0,0,.35), transparent 70%); opacity:.6;
+    animation:shadow-breathe 10s ease-in-out infinite alternate;
+  }
+  @keyframes shadow-breathe{ from{ transform:scaleX(.9); } to{ transform:scaleX(1.08); } }
+
+  @media (max-width:760px){
+    .auto-top{ grid-template-columns:1fr; gap:.5rem; }
+    .stack3d{ --plate:116px; --gap:38px; height:260px; }
+  }
+
+  /* =====================================================================
+     9) MORE ANIMATION
+     - Hero text fades up on load
+     - Everything marked .reveal fades/slides up when scrolled into view
+       (the small script at the bottom of the page adds the .in class)
+     - Cards / reviews lift on hover (see sections 6c, 6d)
+     ===================================================================== */
+  @keyframes rise{ from{ opacity:0; transform:translateY(26px); } to{ opacity:1; transform:none; } }
+  .masthead{ animation:rise .8s cubic-bezier(.2,.7,.2,1) backwards; }
+  .hero-content h1{ animation:rise 1s .25s cubic-bezier(.2,.7,.2,1) backwards; }
+
+  /* Only hide .reveal items when JavaScript is running (the "js" class is set in <head>),
+     so the page is still fully visible if JS is off. */
+  .js .reveal{ opacity:0; }
+  .js .reveal.in{ opacity:1; animation:rise .8s cubic-bezier(.2,.7,.2,1) var(--d, 0s) backwards; }
+
+  /* Respect people who ask their device for less motion: no spinning, no sliding */
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation:none !important; transition:none !important; }
+    .js .reveal{ opacity:1 !important; }
+  }

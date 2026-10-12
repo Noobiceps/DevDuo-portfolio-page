@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="50 50 900 900" width="64" height="64">
+  <title>DevDuo Studio</title>
+  <!-- Sunshine yellow background -->
+  <rect x="50" y="50" width="900" height="900" fill="#FFD93D"/>
+  <!-- DevDuo logo mark: round-capped black strokes -->
+  <g fill="none" stroke="#000" stroke-width="94" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M500 147V294"/>
+    <path d="M194 323L500 500L806 323M500 500V852"/>
+    <path d="M194 676L322 602"/>
+    <path d="M678 602L806 676"/>
+  </g>
+</svg>

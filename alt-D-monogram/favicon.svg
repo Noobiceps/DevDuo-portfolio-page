@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>DevDuo Studio</title>
+  <!-- Deep brown tile -->
+  <rect width="64" height="64" rx="14" fill="#3B2A20"/>
+  <!-- Beige "D" monogram (evenodd cuts the counter out of the letter) -->
+  <path fill="#F5EFE6" fill-rule="evenodd" d="M17 12H33C46 12 55 20 55 32C55 44 46 52 33 52H17Z M27 21V43H33C40 43 45 39 45 32C45 25 40 21 33 21Z"/>
+</svg>

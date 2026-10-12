@@ -1,0 +1,32 @@
+<!-- Scroll-reveal: put this just before </body>.
+     Adds the class "in" to every .reveal element when it scrolls into view, with a small stagger between siblings. -->
+<script>
+(function () {
+  var items = document.querySelectorAll('.reveal');
+
+  // Very old browsers: just show everything
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+
+  // Stagger: siblings inside the same parent animate 0.1s after each other
+  items.forEach(function (el) {
+    var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) {
+      return c.classList.contains('reveal');
+    });
+    el.style.setProperty('--d', (sibs.indexOf(el) * 0.1) + 's');
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);   // animate once
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
