@@ -146,24 +146,71 @@
     .viz{ grid-column:2; width:min(100%, 200px); margin:.9rem 0 0; align-self:start; }
   }
 
-  /* ---------- 6b) PROJECTS ---------- */
-  .row{
-    display:grid; grid-template-columns:auto 1fr; gap:.2rem 1.4rem;
-    padding:1.1rem 0; border-bottom:1px solid var(--line);
+  /* ---------- 6b) PROJECTS: card grid with a swipeable picture gallery ----------
+     Each project is an <article class="proj">: pictures on top (.proj-media), text below (.proj-body).
+     2 columns on desktop, 1 column on phones. Cards with several pictures get arrows + dots. */
+  .proj-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:1.8rem 1.6rem; }
+  .proj{
+    display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--line); border-radius:12px;
+    background:#FBF8F2;
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
   }
-  .row:first-of-type{ padding-top:0; }
-  .row:last-child{ border-bottom:none; padding-bottom:0; }
-  .row .tag{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--gold); padding-top:.4rem; white-space:nowrap; }
-  .row h3{ font-weight:600; font-size:1.1rem; }
-  .row h3 a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); transition:border-color .15s, color .15s; }
-  .row h3 a:hover, .row h3 a:focus-visible{ color:var(--wine); border-color:var(--wine); }
-  .row p{ color:var(--ink-dim); font-size:.94rem; margin-top:.4rem; max-width:56ch; }
-  .row p a{ color:var(--wine); text-decoration:none; border-bottom:1px solid var(--line); transition:border-color .15s; }
-  .row p a:hover, .row p a:focus-visible{ border-color:var(--wine); }
-  .row .stack{ margin-top:.6rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-dim); display:flex; gap:.9rem; flex-wrap:wrap; }
-  .row .stack span::before{ content:"·"; margin-right:.5em; color:var(--line); }
-  .row .stack span:first-child::before{ content:none; }
-  @media (max-width:480px){ .row{ gap:.2rem 1rem; } }
+  .proj:hover{ transform:translateY(-4px); border-color:var(--gold); box-shadow:0 18px 32px -22px rgba(34,29,23,.6); }
+
+  /* picture area (dark so the screenshots pop) */
+  .proj-media{ position:relative; aspect-ratio:1040 / 660; background:var(--bg-dark); }
+  .shots{
+    position:absolute; inset:0;
+    display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+    scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  }
+  .shots::-webkit-scrollbar{ display:none; }
+  .shots img{ flex:0 0 100%; width:100%; height:100%; object-fit:cover; scroll-snap-align:center; }
+  .shots:focus-visible{ outline:2px solid var(--gold); outline-offset:-4px; }
+  .gal-btn{
+    position:absolute; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%;
+    border:1px solid rgba(245,239,230,.55); background:rgba(34,24,18,.62); color:#F5EFE6;
+    font-size:20px; line-height:1; cursor:pointer; opacity:0; transition:opacity .2s, background .2s;
+  }
+  .gal-btn:hover{ background:rgba(34,24,18,.9); }
+  .gal-prev{ left:10px; } .gal-next{ right:10px; }
+  .proj-media:hover .gal-btn, .proj-media:focus-within .gal-btn{ opacity:1; }
+  @media (hover:none){ .gal-btn{ opacity:.85; } }          /* touch screens: always visible */
+  .gal-dots{ position:absolute; left:0; right:0; bottom:10px; display:flex; justify-content:center; gap:6px; }
+  .gal-dots button{ width:7px; height:7px; padding:0; border:0; border-radius:4px; background:rgba(245,239,230,.5); cursor:pointer; transition:width .25s, background .25s; }
+  .gal-dots button.on{ width:20px; background:#E0B872; }
+  .proj-media.single .gal-btn, .proj-media.single .gal-dots{ display:none; }
+
+  /* "coming soon" placeholder in place of a picture */
+  .proj-media.soon{ display:grid; place-items:center; align-content:center; gap:.8rem; color:#CDBFAA;
+    background:radial-gradient(circle at 30% 20%, rgba(224,184,114,.2), transparent 55%), var(--bg-dark); }
+  .proj-media.soon svg{ width:74px; height:74px; }
+  .proj-media.soon span{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:#E0B872; }
+
+  /* text area */
+  .proj-body{ display:flex; flex-direction:column; flex:1; padding:1.15rem 1.25rem 1.3rem; }
+  .proj-meta{ display:flex; gap:.8rem; font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.06em; color:var(--gold); }
+  .proj-meta span + span::before{ content:"·"; margin-right:.8rem; color:var(--ink-dim); }
+  .proj h3{ font-weight:600; font-size:1.25rem; margin-top:.5rem; }
+  .proj h3 a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); transition:color .15s, border-color .15s; }
+  .proj h3 a:hover, .proj h3 a:focus-visible{ color:var(--wine); border-color:var(--wine); }
+  .proj p{ color:var(--ink-dim); font-size:.94rem; margin-top:.5rem; }
+  .stack{ margin-top:.85rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-dim); display:flex; gap:.9rem; flex-wrap:wrap; }
+  .stack span::before{ content:"·"; margin-right:.5em; color:var(--ink-dim); opacity:.6; }
+  .stack span:first-child::before{ content:none; }
+  .proj-link{ margin-top:auto; padding-top:1.1rem; font-family:'IBM Plex Mono',monospace; font-size:.78rem; letter-spacing:.04em; color:var(--wine); text-decoration:none; }
+  .proj-link:hover, .proj-link:focus-visible{ text-decoration:underline; }
+
+  /* Websites tour: small heading + 3 cards across */
+  .subhead{
+    display:flex; align-items:center; gap:.9rem; margin:3rem 0 1.3rem;
+    font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold);
+  }
+  .subhead::after{ content:""; flex:1; height:1px; background:var(--line); }
+
+  @media (max-width:760px){
+    .proj-grid{ grid-template-columns:1fr; gap:1.5rem; }
+  }
 
   /* ---------- 6c) AUTOMATION & AI: 3 cards ---------- */
   .cards{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1.6rem; }
@@ -422,6 +469,114 @@
   @media (max-width:760px){
     .auto-top{ grid-template-columns:1fr; gap:.5rem; }
     .stack3d{ --plate:116px; --gap:38px; height:260px; }
+  }
+
+
+  /* =====================================================================
+     8c) WEBSITES TOUR - curated 3D walk-through of each site
+     A tilted, floating browser window glides through the best sections of the site
+     (soft crossfade + slow zoom), with a section label and a progress bar underneath.
+     It tilts toward the mouse, sways gently and swings into place when scrolled to.
+     Pictures: images/tour-<site>-<n>.webp (1600 x 909). Add/remove <img class="slide"> + a .tour-seg to change the sections.
+     ===================================================================== */
+  .tour-row{
+    display:grid; grid-template-columns:minmax(0, .78fr) minmax(0, 1.45fr); gap:2rem; align-items:center;
+    padding:2.4rem 0; border-top:1px solid var(--line);
+  }
+  .subhead + .tour-row{ border-top:0; padding-top:.4rem; }
+  .tour-row.flip{ grid-template-columns:minmax(0, 1.45fr) minmax(0, .78fr); }      /* mirrored row: window on the left */
+  .tour-row.flip .tour-copy{ order:2; }
+  .tour-copy h3{ font-weight:600; font-size:1.4rem; margin-top:.5rem; }
+  .tour-copy h3 a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); transition:color .15s, border-color .15s; }
+  .tour-copy h3 a:hover, .tour-copy h3 a:focus-visible{ color:var(--wine); border-color:var(--wine); }
+  .tour-copy p{ color:var(--ink-dim); font-size:.97rem; margin-top:.6rem; }
+  .tour-pages{ list-style:none; display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1rem; }
+  .tour-pages li{ font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.04em; padding:.3rem .65rem; border:1px solid var(--line); border-radius:999px; color:var(--ink-dim); }
+  .tour-copy .proj-link{ display:inline-block; margin-top:1.1rem; padding-top:0; }
+
+  /* the dark stage the window floats on */
+  .tour-stage{
+    position:relative; perspective:1500px; overflow:hidden; border-radius:16px; padding:2.4rem 1.7rem 1.4rem;
+    background:radial-gradient(circle at 22% 12%, rgba(224,184,114,.28), transparent 55%), radial-gradient(circle at 90% 95%, rgba(240,207,168,.12), transparent 50%), linear-gradient(160deg,#4A352A,#33241B);
+  }
+  .tour-stage::before{ content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(245,239,230,.08) 1.2px, transparent 1.4px); background-size:22px 22px; pointer-events:none; }
+  .tour-tilt{
+    --ry:-12deg; --rx:4deg; position:relative; transform-style:preserve-3d;
+    transform:rotateY(var(--ry)) rotateX(var(--rx));
+    transition:transform 1.3s cubic-bezier(.2,.8,.2,1);
+  }
+  .tour-row.flip .tour-tilt{ --ry:12deg; }
+  .tour-stage.live .tour-tilt{ transition:transform .25s ease-out; }       /* follows the mouse quickly once it has arrived */
+  .tour-sway{ position:relative; transform-style:preserve-3d; animation:tour-sway 6s ease-in-out infinite alternate; }
+  .tour-sway::before{                       /* thin gold outline floating behind the window = depth */
+    content:""; position:absolute; inset:16px -16px -16px 16px; border-radius:12px;
+    border:1px solid rgba(224,184,114,.5); transform:translateZ(-46px); pointer-events:none;
+  }
+  @keyframes tour-sway{ from{ transform:translateY(0) rotateZ(-.5deg); } to{ transform:translateY(-8px) rotateZ(.5deg); } }
+
+  .tour-frame{
+    position:relative; overflow:hidden; border-radius:12px; background:#FAF6EF;
+    box-shadow:0 44px 60px -26px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.12);
+  }
+  .tour-frame::after{ content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(115deg, rgba(255,255,255,.14), transparent 38%); }
+  .tour-bar{ display:flex; align-items:center; gap:6px; height:26px; padding:0 11px; background:#EDE4D3; border-bottom:1px solid #D9CCB2; }
+  .tour-bar i{ width:8px; height:8px; border-radius:50%; background:#C9B896; }
+  .tour-bar .url{ margin-left:9px; height:16px; padding:0 10px; display:flex; align-items:center; border-radius:8px; background:#FAF6EF; font-family:'IBM Plex Mono',monospace; font-size:.6rem; color:#6B6152; }
+
+  /* the pictures: stacked, one visible at a time */
+  .tour-view{ position:relative; aspect-ratio:1600 / 909; overflow:hidden; background:#EDE4D3; }
+  .slide{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0;
+    transition:opacity .9s ease; transform-origin:30% 35%;
+  }
+  .slide.on{ opacity:1; animation:tour-kb 6s ease-out forwards; }
+  .slide.on:nth-child(even){ transform-origin:70% 60%; }
+  @keyframes tour-kb{ from{ transform:scale(1); } to{ transform:scale(1.06); } }   /* slow, gentle zoom */
+  .tour-stage:hover .slide.on{ animation-play-state:paused; }
+
+  /* label + progress under the window (stays flat, not tilted) */
+  .tour-ui{ position:relative; margin-top:1.35rem; }
+  .tour-cap{
+    font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:#E0B872; min-height:1.2em;
+  }
+  .tour-cap.swap{ animation:cap-in .5s ease; }
+  @keyframes cap-in{ from{ opacity:0; transform:translateY(5px); } to{ opacity:1; transform:none; } }
+  .tour-segs{ display:flex; gap:6px; margin-top:.55rem; }
+  .tour-seg{ flex:1; padding:7px 0; border:0; background:none; cursor:pointer; }
+  .tour-seg i{ display:block; position:relative; height:3px; border-radius:2px; overflow:hidden; background:rgba(245,239,230,.22); }
+  .tour-seg i::after{ content:""; position:absolute; inset:0; background:#E0B872; transform:scaleX(0); transform-origin:left; }
+  .tour-seg.done i::after{ transform:scaleX(1); }
+  .tour-seg.on i::after{ animation:tour-fill 4s linear forwards; }
+  .tour-seg:focus-visible{ outline:2px solid #E0B872; outline-offset:2px; border-radius:3px; }
+  @keyframes tour-fill{ to{ transform:scaleX(1); } }
+  .tour-stage:not(.playing) .tour-seg.on i::after, .tour-stage:hover .tour-seg.on i::after{ animation-play-state:paused; }
+
+  /* swing-in when scrolled to (only when JavaScript is on) */
+  .js .tour-stage{ opacity:0; transition:opacity 1s ease; }
+  .js .tour-row.in .tour-stage{ opacity:1; }
+  .js .tour-row:not(.in) .tour-tilt{ transform:rotateY(calc(var(--ry) * 2.7)) rotateX(15deg) translateZ(-170px); }
+
+  /* compact card for the magazine site */
+  .mini-site{
+    display:grid; grid-template-columns:230px 1fr; gap:1.4rem; align-items:center; margin-top:.6rem; padding:1.1rem;
+    border:1px solid var(--line); border-radius:12px; background:#FBF8F2; transition:border-color .3s, box-shadow .3s;
+  }
+  .mini-site:hover{ border-color:var(--gold); box-shadow:0 14px 28px -22px rgba(34,29,23,.6); }
+  .mini-shots{ position:relative; aspect-ratio:1600 / 909; border-radius:8px; overflow:hidden; border:1px solid var(--line); background:#EDE4D3; }
+  .mini-shots img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:mini-fade 9s ease-in-out infinite; }
+  .mini-shots img:nth-child(2){ animation-delay:-4.5s; }
+  @keyframes mini-fade{ 0%,40%{ opacity:1; } 50%,90%{ opacity:0; } 100%{ opacity:1; } }
+  .mini-site h3{ font-weight:600; font-size:1.1rem; margin-top:.4rem; }
+  .mini-site h3 a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); }
+  .mini-site h3 a:hover{ color:var(--wine); border-color:var(--wine); }
+  .mini-site p{ color:var(--ink-dim); font-size:.9rem; margin-top:.4rem; }
+  .mini-site .proj-link{ display:inline-block; margin-top:.8rem; padding-top:0; }
+
+  @media (max-width:760px){
+    .tour-row, .tour-row.flip{ grid-template-columns:1fr; gap:1.3rem; padding:1.8rem 0; }
+    .tour-stage{ order:-1; padding:2rem 1.5rem 1.2rem; }
+    .tour-row.flip .tour-copy{ order:0; }
+    .mini-site{ grid-template-columns:1fr; }
   }
 
   /* =====================================================================

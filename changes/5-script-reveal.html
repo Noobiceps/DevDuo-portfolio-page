@@ -30,3 +30,100 @@
   items.forEach(function (el) { io.observe(el); });
 })();
 </script>
+
+<!-- Project picture galleries: arrows + dots for cards with more than one picture. Put this next to the script above, before </body>. -->
+<script>
+(function () {
+  document.querySelectorAll('.proj-media').forEach(function (box) {
+    var track = box.querySelector('.shots');
+    if (!track) return;
+    var slides = track.querySelectorAll('img');
+    if (slides.length < 2) { box.classList.add('single'); return; }
+
+    var dotsBox = box.querySelector('.gal-dots');
+    slides.forEach(function (_, i) {
+      var d = document.createElement('button');
+      d.type = 'button'; d.setAttribute('aria-label', 'Show picture ' + (i + 1));
+      d.addEventListener('click', function () { go(i); });
+      dotsBox.appendChild(d);
+    });
+    var dots = dotsBox.querySelectorAll('button');
+
+    function current() { return Math.round(track.scrollLeft / track.clientWidth); }
+    function go(i) {
+      i = (i + slides.length) % slides.length;                 // wrap around
+      track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+    }
+    function mark() { var c = current(); dots.forEach(function (d, i) { d.classList.toggle('on', i === c); }); }
+
+    box.querySelector('.gal-prev').addEventListener('click', function () { go(current() - 1); });
+    box.querySelector('.gal-next').addEventListener('click', function () { go(current() + 1); });
+    var ticking = false;
+    track.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(function () { mark(); ticking = false; }); }
+    });
+    mark();
+  });
+})();
+</script>
+
+<!-- Websites tour: steps through the pictures, shows the section label, tilts the 3D window toward the mouse.
+     Put this next to the other scripts, before </body>. -->
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover = window.matchMedia('(hover: hover)').matches;
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  document.querySelectorAll('.tour-stage').forEach(function (stage) {
+    var tilt = stage.querySelector('.tour-tilt');
+    var slides = stage.querySelectorAll('.slide');
+    var segs = stage.querySelectorAll('.tour-seg');
+    var cap = stage.querySelector('.tour-cap');
+    var base = parseFloat(stage.getAttribute('data-ry')) || -14;
+    var idx = 0;
+
+    // after the swing-in has finished, let the window follow the mouse quickly
+    setTimeout(function () { stage.classList.add('live'); }, 1500);
+
+    function show(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle('on', k === idx); });
+      segs.forEach(function (g, k) { g.classList.remove('on'); g.classList.toggle('done', k < idx); });
+      void stage.offsetWidth;                         // restart the progress bar animation
+      segs[idx].classList.add('on');
+      if (cap) {
+        cap.textContent = pad(idx + 1) + ' / ' + pad(slides.length) + ' \u00b7 ' + slides[idx].getAttribute('data-label');
+        cap.classList.remove('swap'); void cap.offsetWidth; cap.classList.add('swap');
+      }
+    }
+    segs.forEach(function (g, k) { g.addEventListener('click', function () { show(k); }); });
+
+    // when the progress bar fills, move on to the next picture
+    stage.addEventListener('animationend', function (e) {
+      if (e.animationName === 'tour-fill' && stage.classList.contains('playing')) { show(idx + 1); }
+    });
+
+    // run only while the window is on screen (saves battery)
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { stage.classList.toggle('playing', e.isIntersecting); });
+      }, { threshold: 0.4 }).observe(stage);
+    } else { stage.classList.add('playing'); }
+
+    // mouse tilt (desktop only)
+    if (!reduce && canHover) {
+      stage.addEventListener('mousemove', function (e) {
+        var r = stage.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5;
+        var y = (e.clientY - r.top) / r.height - 0.5;
+        tilt.style.setProperty('--ry', (base + x * 16) + 'deg');
+        tilt.style.setProperty('--rx', (5 - y * 12) + 'deg');
+      });
+      stage.addEventListener('mouseleave', function () {
+        tilt.style.removeProperty('--ry'); tilt.style.removeProperty('--rx');
+      });
+    }
+  });
+})();
+</script>

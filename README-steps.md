@@ -12,6 +12,8 @@
 | changes/2-styles.css | piece: replaces everything between <style> and </style> |
 | changes/3-nav.html | piece: replaces the <nav>...</nav> in the masthead |
 | changes/4-body-sections.html | piece: replaces everything from the old About section to the closing </footer> |
+| images/bill-tracker.webp | NEW: upload the whole `images` folder to the repo root (same place as index.html). It is the Bill Tracker picture. |
+| changes/6-add-picture-to-another-project.html | how to add a picture to any other project |
 | changes/5-script-reveal.html | piece: paste just BEFORE </body> (scroll-reveal animation script) |
 | alt-D-monogram/ | OPTIONAL: a beige-on-brown "D" favicon (same 3 file names). The main favicon files are your yellow DevDuo logo. |
 
@@ -58,3 +60,18 @@ Top of the CSS, in `:root`: `--bg-light` and `--bg-dark`. To flip a section, swa
 - Hover lifts on cards and reviews, nav-link underline slide, hero text fade-in.
 - Visitors whose device is set to "reduce motion" get no spinning or sliding.
 - Reviews: R Prasad and S Jaiswal are the two featured cards at the top. Their quotes are DRAFT wording - replace with their real words before promoting.
+
+## Project pictures (new)
+- Projects is now a card grid. Each card has a picture gallery (swipe, arrows or dots).
+- 10 pictures live in the `images` folder (upload the whole folder to the repo root, next to index.html).
+- Real screenshots: bill-tracker-1/2/3, expense-tracker-1/2/3 (sample data) and restaurant-inventory-intro (intro slide), restaurant-inventory-1/2 (your real app, vendor phone numbers blurred). Illustrations: work-together-1/2/3, invoice-reminder-1/2 (they say "Illustration" in the corner).
+- Restaurant Inventory and Invoice Reminder are not linked on purpose (a client's live system and a private n8n login).
+- Websites tour: three cards (Hotel Mahal, Hotel Red Velvet, Charitable Project). Their pictures (site-*.webp) are stand-in wireframes. Replace them with real screenshots of the sites (same file names, 1040 x 660) when you have them.
+- Restaurant Inventory now uses 2 real screenshots (images/restaurant-inventory-1.webp and -2.webp). Work Together still has 3 illustrations - replace with real screenshots when you have them.
+
+## Websites tour (new, 3D, curated)
+- Hotel Mahal and Hotel Red Velvet each get a floating, tilted 3D browser window that glides through 6 hand-picked sections of the site (soft crossfade + slow zoom), with a section label and a progress bar. Click a bar segment to jump. It tilts toward the mouse and pauses on hover.
+- Pictures are clean stills taken from your screen recordings (browser tabs and mouse cursor removed): images/tour-hotel-mahal-1..6.webp, images/tour-hotel-red-velvet-1..6.webp.
+- Shyam Smriti Magazine is a small, quiet card with 2 pictures (images/tour-shyam-smriti-1..2.webp).
+- No videos are needed. Upload the whole `images` folder (about 1 MB for the tour). If an old `videos` folder was uploaded earlier, you can delete it.
+- Note: on the live Hotel Mahal hero, the word "celebrate" and the small "Chinsurah, West Bengal" line are very dark on the dark photo - worth checking the colour on the live site.

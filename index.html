@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KCSF0T8MST"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KCSF0T8MST');
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does DevDuo Studio do?",
+      "acceptedAnswer": {"@type": "Answer", "text": "We build custom web apps and automation for businesses, designed around how each business actually works."}
+    },
+    {
+      "@type": "Question",
+      "name": "How does the process work?",
+      "acceptedAnswer": {"@type": "Answer", "text": "First we understand your business. Then we design and build an AI-integrated app around it and show it to you. Finally we host and maintain it."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do you host and maintain the app after building it?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. We host it, monitor it, and keep updating it as your business changes."}
+    }
+  ]
+}
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DevDuo Studio | Custom Web Apps & Business Automation in India</title>
+<meta name="description" content="DevDuo Studio builds custom web apps and automation for businesses. We understand your business, build an app for automation of daily time taking tasks, then host and maintain it.">
+<link rel="canonical" href="https://devduostudio.com/">
+
+<!-- Favicon (browser tab icon). Put these 3 lines inside <head>, e.g. right after the canonical link -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FAF6EF">
+
+<!-- Link previews (WhatsApp, LinkedIn, Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DevDuo Studio">
+<meta property="og:title" content="DevDuo Studio | Custom Web Apps & Business Automation">
+<meta property="og:description" content="We build the software your business actually runs on.">
+<meta property="og:url" content="https://devduostudio.com/">
+<meta property="og:image" content="https://devduostudio.com/preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Put this in <head>, just BEFORE the <style> tag. It lets the CSS hide .reveal items only when JavaScript is running. -->
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  /* =====================================================================
+     DEVDUO STUDIO - STYLES
+     Sections are grouped: 1) colours  2) base  3) layout  4) hero/masthead
+     5) shared section parts  6) each section  7) footer
+     ===================================================================== */
+
+  /* ---------- 1) COLOURS (edit here to re-theme the whole site) ---------- */
+  :root{
+    /* The two alternating section backgrounds */
+    --bg-light:#F5EFE6;          /* light beige sections */
+    --bg-dark:#3B2A20;           /* deep brown sections  */
+
+    /* Consistent vertical padding for every section (top and bottom) */
+    --section-pad:clamp(3.5rem, 8vw, 6rem);
+
+    /* Original brand colours (hero + masthead still use these) */
+    --paper:#FAF6EF; --beige:#F0E7D8;
+
+    /* Default (LIGHT section) text colours.
+       Slightly deeper than before so they stay readable on #F5EFE6. */
+    --ink:#221D17;               /* main text            */
+    --ink-dim:#6B6152;           /* secondary text       */
+    --line:#DED0B4;              /* borders / dividers   */
+    --gold:#7F5E26;              /* small labels, accent */
+    --wine:#5C2A2A;              /* links, highlights    */
+    --num-fill:var(--beige);     /* fill of big step numbers */
+
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+
+  /* ---------- 2) BASE ---------- */
+  *{box-sizing:inherit; margin:0; padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  html,body{height:100%;}
+  body{
+    background:var(--bg-light); color:var(--ink);
+    font-family:'Fraunces', Georgia, serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'IBM Plex Mono', ui-monospace, monospace;}
+  ::selection{ background:var(--gold); color:var(--paper); }
+
+  /* ---------- 3) LAYOUT ---------- */
+  /* .page is now full width so section backgrounds can touch both screen edges.
+     .wrap is the centred content column that lives inside every section. */
+  .page{ width:100%; }
+  .wrap{ max-width:860px; margin:0 auto; padding:0 2.5rem; }
+  @media (max-width:640px){ .wrap{ padding:0 1.35rem; } }
+
+  /* ---------- 4) MASTHEAD + HERO (unchanged except nav wrapping) ---------- */
+  .masthead{
+    display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;
+    background:rgba(250,246,239, .35); border-radius: 4px; 
+    padding:.9rem 1.3rem; border:1px solid rgba(255, 255, 255, .25); backdrop-filter: blur(10px); -webkit-backdrop-filter:blur(10px);  
+  }
+  .masthead .mark{font-size:1.15rem; font-weight:600; letter-spacing:.01em;}
+  .masthead .mark em{ color: brown; font-style:italic; font-weight:400; }
+  /* NEW: nav can wrap onto a second line on small screens (6 links now) */
+  .masthead nav{display:flex; flex-wrap:wrap; gap:.4rem 1.8rem;}
+  .masthead nav a{ color:black; text-decoration:none; font-size:.82rem; letter-spacing:.03em; transition:color .15s; }
+  .masthead nav a{ background:linear-gradient(currentColor,currentColor) 0 100% / 0 1px no-repeat; transition:color .15s, background-size .3s ease; }
+  .masthead nav a:hover, .masthead nav a:focus-visible{ color:var(--wine); background-size:100% 1px; }
+  @media (max-width:640px){ .masthead nav{ gap:.4rem 1.1rem; } }
+
+  html, body{
+    overflow-x: hidden;
+  }
+.hero-full{
+  position:relative; left:50%; right:50%;
+  margin-left:-50vw; margin-right:-50vw; width:100vw;
+  overflow:hidden; min-height:min(88vh, 760px);
+  display:flex; flex-direction:column;
+}
+@media (max-width:640px){ .hero-full{ min-height:78vh; } }
+
+.hero-gesture{ position:absolute; inset:0; z-index:0; background:var(--beige); }
+.hero-gesture canvas, .hero-gesture video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.12); transform-origin: center;}
+.hero-scrim{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+}
+
+.hero-inner{
+  position:relative; z-index:2; flex:1; display:flex; flex-direction:column; justify-content:space-between;
+  max-width:860px; width:100%; margin:0 auto; padding:1.6rem 2.5rem 3.5rem;
+}
+@media (max-width:640px){ .hero-inner{ padding:1.2rem 1.35rem 2.5rem; } }
+
+.hero-content{ max-width:56ch; }
+.hero-content h1{
+  font-size:clamp(2.3rem,5.2vw,3.5rem); font-weight:500; line-height:1.14; letter-spacing:-.01em;
+}
+.hero-content h1 em{ font-style:italic; font-weight:400; color: brown; }
+.hero-content p{ color:var(--ink-dim); font-size:1.08rem; max-width:46ch; margin-top:1.3rem; }
+
+  /* ---------- 5) SECTIONS: alternating backgrounds ----------
+     Every section gets class "section" plus EITHER "section--light" or
+     "section--dark". Dark sections simply re-define the colour variables,
+     so all text, borders and accents inside them switch to cream automatically.
+     To flip a section, swap its class. To change a colour, edit :root above. */
+  .section{ padding:var(--section-pad) 0; }
+
+  .section--light{
+    background:var(--bg-light);
+    color:var(--ink);
+  }
+
+  .section--dark{
+    --ink:#F5EFE6;                        /* cream text        (contrast ~12:1) */
+    --ink-dim:#CDBFAA;                    /* softer cream text (contrast ~7.5:1) */
+    --line:rgba(245,239,230,.22);         /* cream borders     */
+    --gold:#E0B872;                       /* light gold labels (contrast ~7.3:1) */
+    --wine:#F0CFA8;                       /* links / highlights in light tan    */
+    --num-fill:transparent;               /* outline-only step numbers          */
+    background:var(--bg-dark);
+    color:var(--ink);
+  }
+  .section--dark ::selection{ background:var(--gold); color:var(--bg-dark); }
+
+  /* Section heading with index number (01, 02, ...) */
+  h2{
+    font-weight:500; font-size:1.55rem; display:flex; align-items:baseline; gap:.7rem;
+    border-bottom:1px solid var(--line); padding-bottom:.8rem; margin-bottom:2.2rem;
+  }
+  h2 .idx{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--gold); }
+
+  /* Short intro line under a heading */
+  .section-intro{ color:var(--ink-dim); font-size:1.02rem; max-width:60ch; margin:-0.6rem 0 2rem; }
+
+  /* ---------- 6a) SERVICES: 3-step process ---------- */
+  .process{ position:relative; }
+  .step{
+    display:grid; grid-template-columns:3.2rem 1fr auto; gap:1.6rem; align-items:start;
+    padding:2rem 0; position:relative;
+  }
+  .step:first-child{ padding-top:0; }      /* no extra gap under the heading */
+  .step:last-child{ padding-bottom:0; }    /* section padding handles the bottom */
+  .step + .step{ border-top:1px solid var(--line); }
+  .step .n{ font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:2.1rem; color:var(--num-fill); -webkit-text-stroke:1px var(--gold); }
+  .step h3{ font-weight:600; font-size:1.18rem; }
+  .step p{ color:var(--ink-dim); font-size:.98rem; margin-top:.5rem; max-width:54ch; }
+  /* phones: the mini screen (.viz) drops under the step text */
+  @media (max-width:560px){
+    .step{ grid-template-columns:2.4rem 1fr; gap:1rem; }
+    .viz{ grid-column:2; width:min(100%, 200px); margin:.9rem 0 0; align-self:start; }
+  }
+
+  /* ---------- 6b) PROJECTS: card grid with a swipeable picture gallery ----------
+     Each project is an <article class="proj">: pictures on top (.proj-media), text below (.proj-body).
+     2 columns on desktop, 1 column on phones. Cards with several pictures get arrows + dots. */
+  .proj-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:1.8rem 1.6rem; }
+  .proj{
+    display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--line); border-radius:12px;
+    background:#FBF8F2;
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .proj:hover{ transform:translateY(-4px); border-color:var(--gold); box-shadow:0 18px 32px -22px rgba(34,29,23,.6); }
+
+  /* picture area (dark so the screenshots pop) */
+  .proj-media{ position:relative; aspect-ratio:1040 / 660; background:var(--bg-dark); }
+  .shots{
+    position:absolute; inset:0;
+    display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+    scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  }
+  .shots::-webkit-scrollbar{ display:none; }
+  .shots img{ flex:0 0 100%; width:100%; height:100%; object-fit:cover; scroll-snap-align:center; }
+  .shots:focus-visible{ outline:2px solid var(--gold); outline-offset:-4px; }
+  .gal-btn{
+    position:absolute; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%;
+    border:1px solid rgba(245,239,230,.55); background:rgba(34,24,18,.62); color:#F5EFE6;
+    font-size:20px; line-height:1; cursor:pointer; opacity:0; transition:opacity .2s, background .2s;
+  }
+  .gal-btn:hover{ background:rgba(34,24,18,.9); }
+  .gal-prev{ left:10px; } .gal-next{ right:10px; }
+  .proj-media:hover .gal-btn, .proj-media:focus-within .gal-btn{ opacity:1; }
+  @media (hover:none){ .gal-btn{ opacity:.85; } }          /* touch screens: always visible */
+  .gal-dots{ position:absolute; left:0; right:0; bottom:10px; display:flex; justify-content:center; gap:6px; }
+  .gal-dots button{ width:7px; height:7px; padding:0; border:0; border-radius:4px; background:rgba(245,239,230,.5); cursor:pointer; transition:width .25s, background .25s; }
+  .gal-dots button.on{ width:20px; background:#E0B872; }
+  .proj-media.single .gal-btn, .proj-media.single .gal-dots{ display:none; }
+
+  /* "coming soon" placeholder in place of a picture */
+  .proj-media.soon{ display:grid; place-items:center; align-content:center; gap:.8rem; color:#CDBFAA;
+    background:radial-gradient(circle at 30% 20%, rgba(224,184,114,.2), transparent 55%), var(--bg-dark); }
+  .proj-media.soon svg{ width:74px; height:74px; }
+  .proj-media.soon span{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:#E0B872; }
+
+  /* text area */
+  .proj-body{ display:flex; flex-direction:column; flex:1; padding:1.15rem 1.25rem 1.3rem; }
+  .proj-meta{ display:flex; gap:.8rem; font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.06em; color:var(--gold); }
+  .proj-meta span + span::before{ content:"·"; margin-right:.8rem; color:var(--ink-dim); }
+  .proj h3{ font-weight:600; font-size:1.25rem; margin-top:.5rem; }
+  .proj h3 a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); transition:color .15s, border-color .15s; }
+  .proj h3 a:hover, .proj h3 a:focus-visible{ color:var(--wine); border-color:var(--wine); }
+  .proj p{ color:var(--ink-dim); font-size:.94rem; margin-top:.5rem; }
+  .stack{ margin-top:.85rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-dim); display:flex; gap:.9rem; flex-wrap:wrap; }
+  .stack span::before{ content:"·"; margin-right:.5em; color:var(--ink-dim); opacity:.6; }
+  .stack span:first-child::before{ content:none; }
+  .proj-link{ margin-top:auto; padding-top:1.1rem; font-family:'IBM Plex Mono',monospace; font-size:.78rem; letter-spacing:.04em; color:var(--wine); text-decoration:none; }
+  .proj-link:hover, .proj-link:focus-visible{ text-decoration:underline; }
+
+  /* Websites tour: small heading + 3 cards across */
+  .subhead{
+    display:flex; align-items:center; gap:.9rem; margin:3rem 0 1.3rem;
+    font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold);
+  }
+  .subhead::after{ content:""; flex:1; height:1px; background:var(--line); }
+
+  @media (max-width:760px){
+    .proj-grid{ grid-template-columns:1fr; gap:1.5rem; }
+  }
+
+  /* ---------- 6c) AUTOMATION & AI: 3 cards ---------- */
+  .cards{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1.6rem; }
+  .card{ border-top:2px solid var(--gold); padding-top:1rem; transition:transform .3s ease; }
+  .card:hover{ transform:translateY(-4px); }
+  .card .tag{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--gold); }
+  .card h3{ font-weight:600; font-size:1.1rem; margin-top:.45rem; }
+  .card p{ color:var(--ink-dim); font-size:.94rem; margin-top:.5rem; }
+  @media (max-width:760px){
+    .cards{ grid-template-columns:1fr; gap:0; }
+    .card{ border-top:1px solid var(--line); padding:1.3rem 0; }
+    .card:first-child{ border-top:2px solid var(--gold); }
+    .card:last-child{ padding-bottom:0; }
+  }
+
+  /* ---------- 6d) CLIENT REVIEWS ---------- */
+  /* 6-column grid: the two featured reviews take 3 columns each (top row),
+     the other reviews take 2 columns each (second row). */
+  .reviews{ display:grid; grid-template-columns:repeat(6, 1fr); gap:1.4rem; }
+  .review{
+    grid-column:span 2;
+    border:1px solid var(--line); padding:1.4rem 1.3rem;
+    display:flex; flex-direction:column; justify-content:space-between; gap:1.2rem;
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .review--lead{ grid-column:span 3; padding:1.7rem 1.6rem; }
+  .review--lead blockquote{ font-size:1.14rem; }
+  .review blockquote{ font-style:italic; font-size:1.02rem; line-height:1.55; }
+  .review .name{ display:block; font-weight:600; font-size:.98rem; }
+  .review .biz{ display:block; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--gold); margin-top:.2rem; }
+  .review:hover{ transform:translateY(-4px); border-color:var(--gold); box-shadow:0 10px 24px -14px rgba(59,42,32,.45); }
+  @media (max-width:760px){
+    .reviews{ grid-template-columns:1fr; }
+    .review, .review--lead{ grid-column:auto; }
+  }
+
+  /* ---------- 6e) ABOUT US ---------- */
+  .about p{ color:var(--ink-dim); font-size:1.02rem; max-width:60ch; }
+
+  /* Two equal cells (India-based / focus). Uses a grid so both are the same
+     width, and a child selector (.ledger-cell) so inner text is NOT padded twice. */
+  .ledger-strip{
+    display:grid; grid-template-columns:1fr 1fr;
+    margin-top:1.8rem; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .ledger-cell{ padding:1rem 1.2rem; }
+  .ledger-cell:first-child{ padding-left:0; }
+  .ledger-cell + .ledger-cell{ border-left:1px solid var(--line); }
+  .ledger-cell .num{ font-size:1rem; color:var(--wine); }
+  .ledger-cell .lbl{ font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--ink-dim); margin-top:.25rem; }
+  @media (max-width:520px){
+    .ledger-strip{ grid-template-columns:1fr; }
+    .ledger-cell{ padding:.9rem 0; }
+    .ledger-cell + .ledger-cell{ border-left:none; border-top:1px solid var(--line); }
+  }
+
+  /* Tech stack rows (Frontend / Backend / Infra): same rhythm as the Projects rows */
+  .skills{ margin-top:0; }
+  .skill-row{
+    display:grid; grid-template-columns:6.5rem 1fr; gap:1.2rem;
+    padding:.9rem 0; border-top:1px solid var(--line); align-items:baseline;
+  }
+  .skill-row:first-child{ border-top:none; }
+  .skill-row:last-child{ padding-bottom:0; }
+  .skill-label{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--gold); }
+  .skill-tags{
+    font-family:'IBM Plex Mono',monospace; font-size:.85rem; color:var(--ink-dim);
+    display:flex; flex-wrap:wrap; gap:.9rem;
+  }
+  .skill-tags span::before{ content:"·"; margin-right:.6em; color:var(--line); }
+  .skill-tags span:first-child::before{ content:none; }
+  @media (max-width:480px){ .skill-row{ grid-template-columns:4.8rem 1fr; gap:.8rem; } }
+
+  /* ---------- 7) FOOTER / CONTACT (light section) ---------- */
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1.5rem;
+  }
+  footer h2{ border:none; padding:0; margin:0 0 .6rem 0; }
+  footer p{ color:var(--ink-dim); font-size:.98rem; max-width:40ch; }
+  .cta{
+    display:inline-block; margin-top:1.2rem; background:var(--wine); color:var(--paper);
+    font-family:'IBM Plex Mono',monospace; font-size:.85rem; font-weight:500;
+    padding:.8rem 1.4rem; text-decoration:none; transition:background .15s, transform .2s ease;
+  }
+  .cta:hover, .cta:focus-visible{ background:var(--ink); transform:translateY(-2px); }
+  .fineprint{ color:var(--ink-dim); font-size:.75rem; text-align:right; font-family:'IBM Plex Mono',monospace; }
+  @media (max-width:640px){ .fineprint{ text-align:left; } }
+
+
+  /* =====================================================================
+     8) "HOW WE WORK" MINI SCREENS (pure CSS + one small inline SVG)
+     One tiny animated "screen" per step:
+       1 Discover  - a ledger being scanned line by line
+       2 Build     - code being typed
+       3 Live      - a growth chart drawing upward
+     They use --gold / --line, so they follow the section colours.
+     Make them bigger/smaller with --vw on .viz. Change speed with the animation durations.
+     ===================================================================== */
+  .viz{
+    --vw:172px; width:var(--vw); flex:none; align-self:center; margin-right:.4rem;
+    border:1px solid var(--line); border-radius:8px; overflow:hidden;
+    background:transparent; background:color-mix(in srgb, var(--gold) 6%, transparent);
+    font-family:'IBM Plex Mono',monospace; color:var(--ink-dim);
+  }
+  .viz-bar{ display:flex; align-items:center; gap:4px; height:20px; padding:0 8px; border-bottom:1px solid var(--line); }
+  .viz-bar i{ width:5px; height:5px; border-radius:50%; background:var(--gold); opacity:.45; }
+  .viz-bar b{ margin-left:auto; font-weight:400; font-size:.5rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); }
+  .viz-body{ position:relative; height:88px; padding:8px 10px; }
+
+  /* --- 1) Discover: rows light up as a scan line passes over them --- */
+  .scan .r{
+    display:flex; align-items:center; gap:8px; height:14px; margin-bottom:4px; padding:0 4px; border-radius:3px;
+    font-size:.56rem; letter-spacing:.04em;
+    animation:row-hit 4s linear infinite; animation-delay:calc(.45s + var(--i) * .76s);
+  }
+  .scan .r em{
+    display:block; height:3px; border-radius:2px; margin-left:auto; width:var(--b); background:var(--ink-dim); opacity:.5;
+    animation:bar-on 4s linear infinite; animation-delay:calc(.45s + var(--i) * .76s);
+  }
+  .scanline{
+    position:absolute; left:6px; right:6px; top:8px; height:1px; background:var(--gold);
+    box-shadow:0 0 8px var(--gold); opacity:0; animation:scan 4s linear infinite;
+  }
+  @keyframes scan{
+    0%{ transform:translateY(0); opacity:0; } 6%{ opacity:1; }
+    80%{ transform:translateY(70px); opacity:1; } 90%,100%{ transform:translateY(70px); opacity:0; }
+  }
+  @keyframes row-hit{
+    0%{ background:transparent; }
+    4%,18%{ background:rgba(224,184,114,.16); }
+    32%,100%{ background:transparent; }
+  }
+  @keyframes bar-on{
+    0%{ background:var(--ink-dim); opacity:.5; }
+    4%,22%{ background:var(--gold); opacity:1; }
+    36%,100%{ background:var(--ink-dim); opacity:.5; }
+  }
+
+  /* --- 2) Build: lines of code type themselves out, then clear and repeat --- */
+  .code .ln{
+    display:block; white-space:pre; overflow:hidden; width:var(--w);
+    font-size:.58rem; line-height:1.5; color:var(--ink-dim);
+    animation:type 7s steps(22, end) infinite backwards; animation-delay:calc(var(--i) * .55s);
+  }
+  .code .ln b{ font-weight:400; color:var(--gold); }       /* keywords */
+  .code .ln s{ text-decoration:none; color:var(--wine); }  /* strings / values */
+  .caret{ display:inline-block; width:5px; height:10px; margin-left:1px; vertical-align:-1px; background:var(--gold); animation:blink 1s steps(2, start) infinite; }
+  @keyframes type{
+    0%{ width:0; } 25%{ width:var(--w); } 88%{ width:var(--w); } 94%,100%{ width:0; }
+  }
+  @keyframes blink{ to{ visibility:hidden; } }
+
+  /* --- 3) Live: bars grow, a line draws upward, the end point pulses --- */
+  .grow .viz-body{ padding:8px 10px; }
+  .grow svg{ display:block; width:100%; height:100%; overflow:visible; }
+  .grow .base{ stroke:var(--line); stroke-width:1; }
+  .grow .bar{
+    fill:var(--gold); opacity:.25; transform-box:fill-box; transform-origin:50% 100%;
+    animation:bar-up 6s ease-out infinite backwards; animation-delay:calc(var(--i) * .1s);
+  }
+  .grow .trend{
+    fill:none; stroke:var(--gold); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;
+    stroke-dasharray:1; animation:line-draw 6s ease-in-out infinite;
+  }
+  .grow .end{ fill:var(--wine); animation:dot-in 6s ease-in-out infinite; }
+  .grow .ping{ fill:none; stroke:var(--gold); stroke-width:1; opacity:0; transform-box:fill-box; transform-origin:center; animation:ping 6s ease-out infinite; }
+  @keyframes bar-up{ 0%{ transform:scaleY(0); } 18%,86%{ transform:scaleY(1); } 94%,100%{ transform:scaleY(0); } }
+  @keyframes line-draw{
+    0%,10%{ stroke-dashoffset:1; opacity:1; } 55%,86%{ stroke-dashoffset:0; opacity:1; } 94%,100%{ stroke-dashoffset:0; opacity:0; }
+  }
+  @keyframes dot-in{ 0%,52%{ opacity:0; } 60%,86%{ opacity:1; } 94%,100%{ opacity:0; } }
+  @keyframes ping{ 0%,56%{ opacity:0; transform:scale(1); } 62%{ opacity:.8; } 100%{ opacity:0; transform:scale(3.4); } }
+
+  /* =====================================================================
+     8b) AUTOMATION STACK (3D scene in the Automation & AI section)
+     Four floating layers - DATA, WORKFLOW, AI, APP - with a point of light
+     travelling up through them. It gently sways (not a full spin) so the
+     labels always stay readable. Tweak: --gap (space between layers),
+     --plate (layer size), animation durations.
+     ===================================================================== */
+  .auto-top{
+    display:grid; grid-template-columns:1fr 250px; gap:2rem; align-items:center;
+    margin-bottom:2.4rem;
+  }
+  .auto-top .section-intro{ margin:0; }
+  .auto-flow{
+    margin-top:1.2rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem;
+    letter-spacing:.08em; color:var(--gold);
+  }
+  .auto-flow span{ color:var(--ink-dim); margin:0 .5em; }
+
+  .stack3d{
+    --plate:132px; --gap:44px;
+    position:relative; width:100%; height:290px; perspective:1000px;
+    display:grid; place-items:center;
+  }
+  .stack-scene{
+    position:relative; width:var(--plate); height:var(--plate);
+    transform-style:preserve-3d;
+    transform:translateY(24px) rotateX(62deg) rotateZ(-35deg);
+    animation:stack-sway 10s ease-in-out infinite alternate;
+  }
+  @keyframes stack-sway{
+    from{ transform:translateY(24px) rotateX(62deg) rotateZ(-50deg); }
+    to  { transform:translateY(24px) rotateX(62deg) rotateZ(-20deg); }
+  }
+
+  /* each layer floats up and down a few pixels, out of step with the others */
+  .plate{
+    position:absolute; inset:0; border-radius:14px;
+    border:1px solid var(--gold);
+    background:transparent; background:color-mix(in srgb, var(--gold) 7%, transparent);
+    display:flex; align-items:flex-end; justify-content:flex-start; padding:9px 11px;
+    font-family:'IBM Plex Mono',monospace; font-size:.58rem; letter-spacing:.14em; color:var(--gold);
+    transform:translateZ(var(--z, 0px));            /* resting position (also used if animation is off) */
+    animation:plate-bob 6s ease-in-out infinite;
+  }
+  .plate::after{                     /* small node in the middle of every layer */
+    content:""; position:absolute; left:50%; top:50%; width:8px; height:8px; margin:-4px;
+    border-radius:50%; background:var(--gold); opacity:.35;
+    animation:node-pulse 4.2s linear infinite; animation-delay:var(--pd, 0s);
+  }
+  .plate.p1{ --z:0px;                         --pd:.2s;  animation-delay:0s;    }
+  .plate.p2{ --z:var(--gap);                  --pd:1.2s; animation-delay:-1.5s; }
+  .plate.p3{ --z:calc(var(--gap) * 2);        --pd:2.2s; animation-delay:-3s;   }
+  .plate.p4{ --z:calc(var(--gap) * 3);        --pd:3.1s; animation-delay:-4.5s; border-style:solid; background:color-mix(in srgb, var(--gold) 14%, transparent); }
+  @keyframes plate-bob{
+    0%,100%{ transform:translateZ(var(--z)); }
+    50%    { transform:translateZ(calc(var(--z) + 9px)); }
+  }
+  @keyframes node-pulse{
+    0%,12%  { opacity:1; transform:scale(1.9); box-shadow:0 0 14px var(--gold); }
+    30%,100%{ opacity:.35; transform:scale(1);  box-shadow:none; }
+  }
+
+  /* the point of light that rises through all four layers */
+  .packet{
+    position:absolute; left:50%; top:50%; width:10px; height:10px; margin:-5px;
+    border-radius:50%; background:var(--wine); box-shadow:0 0 16px 2px var(--gold);
+    animation:packet-rise 4.2s linear infinite;
+  }
+  @keyframes packet-rise{
+    0%   { transform:translateZ(0);                  opacity:0; }
+    6%   { opacity:1; }
+    74%  { transform:translateZ(calc(var(--gap) * 3)); opacity:1; }
+    82%,100%{ transform:translateZ(calc(var(--gap) * 3 + 20px)); opacity:0; }
+  }
+  /* soft floor shadow under the stack */
+  .stack3d::after{
+    content:""; position:absolute; left:50%; bottom:6px; width:150px; height:26px; margin-left:-75px;
+    background:radial-gradient(ellipse at center, rgba(0,0,0,.35), transparent 70%); opacity:.6;
+    animation:shadow-breathe 10s ease-in-out infinite alternate;
+  }
+  @keyframes shadow-breathe{ from{ transform:scaleX(.9); } to{ transform:scaleX(1.08); } }
+
+  @media (max-width:760px){
+    .auto-top{ grid-template-columns:1fr; gap:.5rem; }
+    .stack3d{ --plate:116px; --gap:38px; height:260px; }
+  }
+
+
+  /* =====================================================================
+     8c) WEBSITES TOUR - curated 3D walk-through of each site
+     A tilted, floating browser window glides through the best sections of the site
+     (soft crossfade + slow zoom), with a section label and a progress bar underneath.
+     It tilts toward the mouse, sways gently and swings into place when scrolled to.
+     Pictures: images/tour-<site>-<n>.webp (1600 x 909). Add/remove <img class="slide"> + a .tour-seg to change the sections.
+     ===================================================================== */
+  .tour-row{
+    display:grid; grid-template-columns:minmax(0, .78fr) minmax(0, 1.45fr); gap:2rem; align-items:center;
+    padding:2.4rem 0; border-top:1px solid var(--line);
+  }
+  .subhead + .tour-row{ border-top:0; padding-top:.4rem; }
+  .tour-row.flip{ grid-template-columns:minmax(0, 1.45fr) minmax(0, .78fr); }      /* mirrored row: window on the left */
+  .tour-row.flip .tour-copy{ order:2; }
+  .tour-copy h3{ font-weight:600; font-size:1.4rem; margin-top:.5rem; }
+  .tour-copy h3 a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); transition:color .15s, border-color .15s; }
+  .tour-copy h3 a:hover, .tour-copy h3 a:focus-visible{ color:var(--wine); border-color:var(--wine); }
+  .tour-copy p{ color:var(--ink-dim); font-size:.97rem; margin-top:.6rem; }
+  .tour-pages{ list-style:none; display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1rem; }
+  .tour-pages li{ font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.04em; padding:.3rem .65rem; border:1px solid var(--line); border-radius:999px; color:var(--ink-dim); }
+  .tour-copy .proj-link{ display:inline-block; margin-top:1.1rem; padding-top:0; }
+
+  /* the dark stage the window floats on */
+  .tour-stage{
+    position:relative; perspective:1500px; overflow:hidden; border-radius:16px; padding:2.4rem 1.7rem 1.4rem;
+    background:radial-gradient(circle at 22% 12%, rgba(224,184,114,.28), transparent 55%), radial-gradient(circle at 90% 95%, rgba(240,207,168,.12), transparent 50%), linear-gradient(160deg,#4A352A,#33241B);
+  }
+  .tour-stage::before{ content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(245,239,230,.08) 1.2px, transparent 1.4px); background-size:22px 22px; pointer-events:none; }
+  .tour-tilt{
+    --ry:-12deg; --rx:4deg; position:relative; transform-style:preserve-3d;
+    transform:rotateY(var(--ry)) rotateX(var(--rx));
+    transition:transform 1.3s cubic-bezier(.2,.8,.2,1);
+  }
+  .tour-row.flip .tour-tilt{ --ry:12deg; }
+  .tour-stage.live .tour-tilt{ transition:transform .25s ease-out; }       /* follows the mouse quickly once it has arrived */
+  .tour-sway{ position:relative; transform-style:preserve-3d; animation:tour-sway 6s ease-in-out infinite alternate; }
+  .tour-sway::before{                       /* thin gold outline floating behind the window = depth */
+    content:""; position:absolute; inset:16px -16px -16px 16px; border-radius:12px;
+    border:1px solid rgba(224,184,114,.5); transform:translateZ(-46px); pointer-events:none;
+  }
+  @keyframes tour-sway{ from{ transform:translateY(0) rotateZ(-.5deg); } to{ transform:translateY(-8px) rotateZ(.5deg); } }
+
+  .tour-frame{
+    position:relative; overflow:hidden; border-radius:12px; background:#FAF6EF;
+    box-shadow:0 44px 60px -26px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.12);
+  }
+  .tour-frame::after{ content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(115deg, rgba(255,255,255,.14), transparent 38%); }
+  .tour-bar{ display:flex; align-items:center; gap:6px; height:26px; padding:0 11px; background:#EDE4D3; border-bottom:1px solid #D9CCB2; }
+  .tour-bar i{ width:8px; height:8px; border-radius:50%; background:#C9B896; }
+  .tour-bar .url{ margin-left:9px; height:16px; padding:0 10px; display:flex; align-items:center; border-radius:8px; background:#FAF6EF; font-family:'IBM Plex Mono',monospace; font-size:.6rem; color:#6B6152; }
+
+  /* the pictures: stacked, one visible at a time */
+  .tour-view{ position:relative; aspect-ratio:1600 / 909; overflow:hidden; background:#EDE4D3; }
+  .slide{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0;
+    transition:opacity .9s ease; transform-origin:30% 35%;
+  }
+  .slide.on{ opacity:1; animation:tour-kb 6s ease-out forwards; }
+  .slide.on:nth-child(even){ transform-origin:70% 60%; }
+  @keyframes tour-kb{ from{ transform:scale(1); } to{ transform:scale(1.06); } }   /* slow, gentle zoom */
+  .tour-stage:hover .slide.on{ animation-play-state:paused; }
+
+  /* label + progress under the window (stays flat, not tilted) */
+  .tour-ui{ position:relative; margin-top:1.35rem; }
+  .tour-cap{
+    font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:#E0B872; min-height:1.2em;
+  }
+  .tour-cap.swap{ animation:cap-in .5s ease; }
+  @keyframes cap-in{ from{ opacity:0; transform:translateY(5px); } to{ opacity:1; transform:none; } }
+  .tour-segs{ display:flex; gap:6px; margin-top:.55rem; }
+  .tour-seg{ flex:1; padding:7px 0; border:0; background:none; cursor:pointer; }
+  .tour-seg i{ display:block; position:relative; height:3px; border-radius:2px; overflow:hidden; background:rgba(245,239,230,.22); }
+  .tour-seg i::after{ content:""; position:absolute; inset:0; background:#E0B872; transform:scaleX(0); transform-origin:left; }
+  .tour-seg.done i::after{ transform:scaleX(1); }
+  .tour-seg.on i::after{ animation:tour-fill 4s linear forwards; }
+  .tour-seg:focus-visible{ outline:2px solid #E0B872; outline-offset:2px; border-radius:3px; }
+  @keyframes tour-fill{ to{ transform:scaleX(1); } }
+  .tour-stage:not(.playing) .tour-seg.on i::after, .tour-stage:hover .tour-seg.on i::after{ animation-play-state:paused; }
+
+  /* swing-in when scrolled to (only when JavaScript is on) */
+  .js .tour-stage{ opacity:0; transition:opacity 1s ease; }
+  .js .tour-row.in .tour-stage{ opacity:1; }
+  .js .tour-row:not(.in) .tour-tilt{ transform:rotateY(calc(var(--ry) * 2.7)) rotateX(15deg) translateZ(-170px); }
+
+  /* compact card for the magazine site */
+  .mini-site{
+    display:grid; grid-template-columns:230px 1fr; gap:1.4rem; align-items:center; margin-top:.6rem; padding:1.1rem;
+    border:1px solid var(--line); border-radius:12px; background:#FBF8F2; transition:border-color .3s, box-shadow .3s;
+  }
+  .mini-site:hover{ border-color:var(--gold); box-shadow:0 14px 28px -22px rgba(34,29,23,.6); }
+  .mini-shots{ position:relative; aspect-ratio:1600 / 909; border-radius:8px; overflow:hidden; border:1px solid var(--line); background:#EDE4D3; }
+  .mini-shots img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation:mini-fade 9s ease-in-out infinite; }
+  .mini-shots img:nth-child(2){ animation-delay:-4.5s; }
+  @keyframes mini-fade{ 0%,40%{ opacity:1; } 50%,90%{ opacity:0; } 100%{ opacity:1; } }
+  .mini-site h3{ font-weight:600; font-size:1.1rem; margin-top:.4rem; }
+  .mini-site h3 a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); }
+  .mini-site h3 a:hover{ color:var(--wine); border-color:var(--wine); }
+  .mini-site p{ color:var(--ink-dim); font-size:.9rem; margin-top:.4rem; }
+  .mini-site .proj-link{ display:inline-block; margin-top:.8rem; padding-top:0; }
+
+  @media (max-width:760px){
+    .tour-row, .tour-row.flip{ grid-template-columns:1fr; gap:1.3rem; padding:1.8rem 0; }
+    .tour-stage{ order:-1; padding:2rem 1.5rem 1.2rem; }
+    .tour-row.flip .tour-copy{ order:0; }
+    .mini-site{ grid-template-columns:1fr; }
+  }
+
+  /* =====================================================================
+     9) MORE ANIMATION
+     - Hero text fades up on load
+     - Everything marked .reveal fades/slides up when scrolled into view
+       (the small script at the bottom of the page adds the .in class)
+     - Cards / reviews lift on hover (see sections 6c, 6d)
+     ===================================================================== */
+  @keyframes rise{ from{ opacity:0; transform:translateY(26px); } to{ opacity:1; transform:none; } }
+  .masthead{ animation:rise .8s cubic-bezier(.2,.7,.2,1) backwards; }
+  .hero-content h1{ animation:rise 1s .25s cubic-bezier(.2,.7,.2,1) backwards; }
+
+  /* Only hide .reveal items when JavaScript is running (the "js" class is set in <head>),
+     so the page is still fully visible if JS is off. */
+  .js .reveal{ opacity:0; }
+  .js .reveal.in{ opacity:1; animation:rise .8s cubic-bezier(.2,.7,.2,1) var(--d, 0s) backwards; }
+
+  /* Respect people who ask their device for less motion: no spinning, no sliding */
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation:none !important; transition:none !important; }
+    .js .reveal{ opacity:1 !important; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DevDuo Studio",
+  "url": "https://devduostudio.com/",
+  "description": "Custom web apps and business automation for businesses",
+  "email": "devduostudio26@gmail.com",
+  "sameAs": [
+  "https://www.linkedin.com/company/your-page",
+  "https://github.com/your-username"
+]
+}
+</script>
+</head>
+<body>
+<div class="page">
+
+ <div class="hero-full">
+  <div class="hero-gesture" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="Man_watches_celestial_wave_20260926131211.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="masthead">
+      <div class="mark">DevDuo <em>Studio</em></div>
+      <!-- Navigation: order matches the new page order -->
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#automation">Automation</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="hero-content">
+      <h1>We build the software your <em>business</em> actually runs on.</h1>
+    </div>
+  </div>
+</div>
+
+  <!-- =====================================================================
+       SECTIONS (new order). Backgrounds alternate: hero (light) -> dark -> light -> ...
+       Swap "section--light" / "section--dark" on any <section> to flip its colours.
+       ===================================================================== -->
+
+  <!-- 01 HOW WE WORK (dark) -->
+  <section id="services" class="section section--dark">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">01</span> How we work</h2>
+
+      <div class="process">
+        <div class="step reveal">
+          <div class="n">1</div>
+          <div>
+            <h3>We understand your business</h3>
+            <p>Before any code, we learn how your bills, guests, and stock actually move — the parts of your day that eat the most time and the ones you'd never trust to a template.</p>
+          </div>
+          <!-- Mini screen 1: a ledger being scanned (bills, stock, guests, dues) -->
+          <div class="viz scan" aria-hidden="true">
+            <div class="viz-bar"><i></i><i></i><i></i><b>discover</b></div>
+            <div class="viz-body">
+              <span class="r" style="--i:0;--b:46%">bills<em></em></span>
+              <span class="r" style="--i:1;--b:32%">stock<em></em></span>
+              <span class="r" style="--i:2;--b:56%">guests<em></em></span>
+              <span class="r" style="--i:3;--b:38%">dues<em></em></span>
+              <u class="scanline"></u>
+            </div>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="n">2</div>
+          <div>
+            <h3>We design &amp; curate</h3>
+            <p>A personalised, AI-integrated app built around how you actually work — not a generic dashboard. We walk you through it before anything ships.</p>
+          </div>
+          <!-- Mini screen 2: code typing itself out (the app being built) -->
+          <div class="viz code" aria-hidden="true">
+            <div class="viz-bar"><i></i><i></i><i></i><b>build</b></div>
+            <div class="viz-body">
+              <span class="ln" style="--i:0;--w:17ch"><b>def</b> run(invoice):</span>
+              <span class="ln" style="--i:1;--w:21ch">  <b>if</b> invoice.overdue:</span>
+              <span class="ln" style="--i:2;--w:19ch">    send_reminder()</span>
+              <span class="ln" style="--i:3;--w:21ch">  sync_sheet(invoice)</span>
+              <span class="ln" style="--i:4;--w:19ch">  <b>return</b> <s>"ok"</s><i class="caret"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="n">3</div>
+          <div>
+            <h3>We host &amp; service it</h3>
+            <p>Live, monitored, and maintained — we stay on as your business changes, so the software keeps up with you.</p>
+          </div>
+          <!-- Mini screen 3: growth chart drawing upward (the live app and the business growing) -->
+          <div class="viz grow" aria-hidden="true">
+            <div class="viz-bar"><i></i><i></i><i></i><b>growth</b></div>
+            <div class="viz-body">
+              <svg viewBox="0 0 148 72" preserveAspectRatio="xMidYMid meet">
+                <path class="base" d="M0 71.5H148"/>
+                <rect class="bar" style="--i:0" x="6" y="60" width="12" height="12" rx="2"/>
+                <rect class="bar" style="--i:1" x="27" y="56" width="12" height="16" rx="2"/>
+                <rect class="bar" style="--i:2" x="48" y="52" width="12" height="20" rx="2"/>
+                <rect class="bar" style="--i:3" x="69" y="46" width="12" height="26" rx="2"/>
+                <rect class="bar" style="--i:4" x="90" y="40" width="12" height="32" rx="2"/>
+                <rect class="bar" style="--i:5" x="111" y="32" width="12" height="40" rx="2"/>
+                <rect class="bar" style="--i:6" x="132" y="22" width="12" height="50" rx="2"/>
+                <polyline class="trend" pathLength="1" points="12,50 33,46 54,42 75,36 96,30 117,22 138,12"/>
+                <circle class="ping" cx="138" cy="12" r="3"/>
+                <circle class="end" cx="138" cy="12" r="3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 PROJECTS (light) -->
+  <!-- Picture notes: Bill Tracker and Expense Tracker pictures are real screenshots (sample data).
+       Work Together and Invoice Reminder pictures are illustrations - swap in real screenshots when you have them
+       (files are in /images, ~1040 x 660). -->
+  <section id="projects" class="section section--light">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">02</span> Few of our Projects</h2>
+
+      <div class="proj-grid">
+      <!-- RESTAURANT INVENTORY. Not linked: it is a live system for a working restaurant. Pictures are real screenshots (vendor phone numbers blurred). -->
+      <article class="proj reveal">
+        <div class="proj-media">
+          <div class="shots" tabindex="0" aria-label="Restaurant Inventory &amp; Procurement pictures. Swipe or use the arrow buttons.">
+          <img src="images/restaurant-inventory-intro.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Restaurant Inventory app: the ten modules - dashboard, items, vendors, incoming stock, kitchen issue, waste, vendor payment, ledger, deleted items and CSV import - for multiple outlets">
+          <img src="images/restaurant-inventory-1.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Restaurant Inventory app: Vendor Master with vendor dues and ledger (real screenshot, phone numbers blurred)">
+          <img src="images/restaurant-inventory-2.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Restaurant Inventory app: choose between multiple outlets and import items and vendors from Excel (real screenshot)">
+          </div>
+          <button class="gal-btn gal-prev" type="button" aria-label="Previous picture">‹</button>
+          <button class="gal-btn gal-next" type="button" aria-label="Next picture">›</button>
+          <div class="gal-dots"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2026</span><span>Live app</span></div>
+          <h3>Restaurant Inventory &amp; Procurement</h3>
+          <p>Multi-outlet stock, kitchen issues, waste and a vendor ledger with running due balances, plus Excel import — live on an AWS server for a working restaurant.</p>
+          <div class="stack"><span>Node</span><span>Express</span><span>SQLite</span><span>AWS EC2</span></div>
+        </div>
+      </article>
+
+      <!-- WORK TOGETHER. Picture is an illustration. Replace with a real screenshot when you have one. -->
+      <article class="proj reveal">
+        <div class="proj-media">
+          <div class="shots" tabindex="0" aria-label="Work Together App pictures. Swipe or use the arrow buttons.">
+          <img src="images/work-together-1.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Illustration of the Work Together app: a shared task list, weekly progress ring and pod members">
+          <img src="images/work-together-2.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Illustration of the Work Together app: create a pod or join with an invite code">
+          <img src="images/work-together-3.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Illustration of the Work Together app: calendar export and import with shared tasks">
+          </div>
+          <button class="gal-btn gal-prev" type="button" aria-label="Previous picture">‹</button>
+          <button class="gal-btn gal-next" type="button" aria-label="Next picture">›</button>
+          <div class="gal-dots"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2026</span><span>Live app</span></div>
+          <h3><a href="https://together-app-idqm.onrender.com/" target="_blank" rel="noopener">Work Together App</a></h3>
+          <p>Create a private “pod” with your partner or team, share tasks and watch them get done together.</p>
+          <div class="stack"><span>Python</span><span>Render</span><span>HTML</span><span>CSS</span></div>
+        <a class="proj-link" href="https://together-app-idqm.onrender.com/" target="_blank" rel="noopener">View live app ↗</a>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-media">
+          <div class="shots" tabindex="0" aria-label="Expense Tracker pictures. Swipe or use the arrow buttons.">
+          <img src="images/expense-tracker-1.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Expense Tracker app: add-expense form and expense list (sample data)">
+          <img src="images/expense-tracker-2.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Expense Tracker summary: category totals in percent with a bar chart (sample data)">
+          <img src="images/expense-tracker-3.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Expense Tracker list with filters for date range and category (sample data)">
+          </div>
+          <button class="gal-btn gal-prev" type="button" aria-label="Previous picture">‹</button>
+          <button class="gal-btn gal-next" type="button" aria-label="Next picture">›</button>
+          <div class="gal-dots"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2026</span><span>Live app</span></div>
+          <h3><a href="https://noobiceps.github.io/expense-tracker/" target="_blank" rel="noopener">Expense Tracker</a></h3>
+          <p>Add and categorise expenses, see category totals as a percentage breakdown with a chart, and filter by date or category.</p>
+          <div class="stack"><span>Vanilla JS</span><span>Chart</span><span>GitHub Pages</span><span>HTML</span><span>CSS</span></div>
+        <a class="proj-link" href="https://noobiceps.github.io/expense-tracker/" target="_blank" rel="noopener">View live app ↗</a>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-media">
+          <div class="shots" tabindex="0" aria-label="Bill Tracker pictures. Swipe or use the arrow buttons.">
+          <img src="images/bill-tracker-1.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Bill Tracker dashboard on a phone with totals popup (sample data)">
+          <img src="images/bill-tracker-2.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Bill Tracker due-soon and overdue notifications (sample data)">
+          <img src="images/bill-tracker-3.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Bill Tracker calendar highlighting due dates (sample data)">
+          </div>
+          <button class="gal-btn gal-prev" type="button" aria-label="Previous picture">‹</button>
+          <button class="gal-btn gal-next" type="button" aria-label="Next picture">›</button>
+          <div class="gal-dots"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2026</span><span>Live app</span></div>
+          <h3><a href="https://noobiceps.github.io/Bill-Tracker-App/" target="_blank" rel="noopener">Bill Tracker</a></h3>
+          <p>Tracks due dates and autopay status for every bill, with a 3-day due-soon flag, due-date calendar and monthly summary.</p>
+          <div class="stack"><span>Vanilla JS</span><span>Express</span><span>SQLite</span></div>
+        <a class="proj-link" href="https://noobiceps.github.io/Bill-Tracker-App/" target="_blank" rel="noopener">View live app ↗</a>
+        </div>
+      </article>
+
+      <!-- INVOICE REMINDER. Not linked: the link is the private n8n editor. Pictures are illustrations. -->
+      <article class="proj reveal">
+        <div class="proj-media">
+          <div class="shots" tabindex="0" aria-label="Automated Invoice Reminder pictures. Swipe or use the arrow buttons.">
+          <img src="images/invoice-reminder-1.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Illustration: Google Sheet to n8n workflow to client email">
+          <img src="images/invoice-reminder-2.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Illustration of an automatic polite invoice reminder email">
+          </div>
+          <button class="gal-btn gal-prev" type="button" aria-label="Previous picture">‹</button>
+          <button class="gal-btn gal-next" type="button" aria-label="Next picture">›</button>
+          <div class="gal-dots"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2026</span><span>Automation</span></div>
+          <h3>Automated Invoice Reminder</h3>
+          <p>An n8n workflow that reads a Google Sheet of invoices and emails clients a polite follow-up on anything outstanding, on demand.</p>
+          <div class="stack"><span>n8n</span><span>Google Sheets</span><span>Email</span></div>
+        </div>
+      </article>
+
+      <!-- QR GUEST FEEDBACK (coming soon): no picture yet, shows a placeholder -->
+      <article class="proj reveal">
+        <div class="proj-media soon" aria-hidden="true">
+          <svg viewBox="0 0 74 74" fill="none" stroke="#E0B872" stroke-width="3"><rect x="6" y="6" width="22" height="22" rx="3"/><rect x="46" y="6" width="22" height="22" rx="3"/><rect x="6" y="46" width="22" height="22" rx="3"/><path d="M13 13h8v8h-8zM53 13h8v8h-8zM13 53h8v8h-8z" fill="#E0B872" stroke="none"/><path d="M40 8v14M40 34h12M34 46h10M54 46v8M44 56v12M60 60h8M34 66h4" stroke-linecap="round"/></svg>
+          <span>Coming soon</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>Soon</span><span>In progress</span></div>
+          <h3>QR Guest Feedback</h3>
+          <p>Scan at checkout — happy guests get steered to a public review, while low ratings stay internal and pop up on your WhatsApp instead of going public.</p>
+          <div class="stack"><span>JS</span><span>Python</span><span>SQL</span></div>
+        </div>
+      </article>
+
+      </div>
+
+      <!-- WEBSITES TOUR: a curated 3D walk-through of each site (stills from screen recordings, cursor removed).
+           Each .slide is images/tour-<site>-<n>.webp; every slide needs a matching <button class="tour-seg"> and a data-label. -->
+      <h3 class="subhead reveal">Websites we've built</h3>
+      <div class="tour-row reveal">
+        <div class="tour-copy">
+          <div class="proj-meta"><span>2026</span><span>Website</span></div>
+          <h3><a href="https://hotelmahal.in/" target="_blank" rel="noopener">Hotel Mahal</a></h3>
+          <p>A website for a hotel in Chinsurah, Hooghly — rooms, restaurant and banquet hall with a photo gallery, plus enquiry and WhatsApp buttons.</p>
+          <ul class="tour-pages" aria-label="Pages"><li>Rooms</li><li>Restaurant</li><li>Banquet</li><li>Gallery</li><li>Contact</li></ul>
+          <a class="proj-link" href="https://hotelmahal.in/" target="_blank" rel="noopener">Visit site ↗</a>
+        </div>
+        <div class="tour-stage" data-ry="-12">
+          <div class="tour-tilt">
+            <div class="tour-sway">
+              <div class="tour-frame">
+                <div class="tour-bar"><i></i><i></i><i></i><span class="url">hotelmahal.in</span></div>
+                <div class="tour-view">
+                  <img class="slide on" src="images/tour-hotel-mahal-1.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Welcome" alt="Hotel Mahal website: Welcome">
+                  <img class="slide" src="images/tour-hotel-mahal-2.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Rooms" alt="Hotel Mahal website: Rooms">
+                  <img class="slide" src="images/tour-hotel-mahal-3.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Room gallery" alt="Hotel Mahal website: Room gallery">
+                  <img class="slide" src="images/tour-hotel-mahal-4.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Dining" alt="Hotel Mahal website: Dining">
+                  <img class="slide" src="images/tour-hotel-mahal-5.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Banquet hall" alt="Hotel Mahal website: Banquet hall">
+                  <img class="slide" src="images/tour-hotel-mahal-6.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Contact" alt="Hotel Mahal website: Contact">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tour-ui">
+            <div class="tour-cap" aria-live="off">01 / 06 · Welcome</div>
+            <div class="tour-segs"><button class="tour-seg on" type="button" aria-label="Show: Welcome"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Rooms"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Room gallery"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Dining"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Banquet hall"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Contact"><i></i></button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-row flip reveal">
+        <div class="tour-copy">
+          <div class="proj-meta"><span>2026</span><span>Website</span></div>
+          <h3><a href="https://www.hotelredvelvet.in/" target="_blank" rel="noopener">Hotel Red Velvet</a></h3>
+          <p>A website for a hotel in Garifa, Naihati — rooms and suites, amenities, nearby attractions and guest reviews, with Book Now and WhatsApp.</p>
+          <ul class="tour-pages" aria-label="Pages"><li>Rooms</li><li>Amenities</li><li>Attractions</li><li>Gallery</li><li>Contact</li></ul>
+          <a class="proj-link" href="https://www.hotelredvelvet.in/" target="_blank" rel="noopener">Visit site ↗</a>
+        </div>
+        <div class="tour-stage" data-ry="12">
+          <div class="tour-tilt">
+            <div class="tour-sway">
+              <div class="tour-frame">
+                <div class="tour-bar"><i></i><i></i><i></i><span class="url">hotelredvelvet.in</span></div>
+                <div class="tour-view">
+                  <img class="slide on" src="images/tour-hotel-red-velvet-1.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Welcome" alt="Hotel Red Velvet website: Welcome">
+                  <img class="slide" src="images/tour-hotel-red-velvet-2.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="About" alt="Hotel Red Velvet website: About">
+                  <img class="slide" src="images/tour-hotel-red-velvet-3.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Suites" alt="Hotel Red Velvet website: Suites">
+                  <img class="slide" src="images/tour-hotel-red-velvet-4.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Facilities" alt="Hotel Red Velvet website: Facilities">
+                  <img class="slide" src="images/tour-hotel-red-velvet-5.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Amenities" alt="Hotel Red Velvet website: Amenities">
+                  <img class="slide" src="images/tour-hotel-red-velvet-6.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Guest reviews" alt="Hotel Red Velvet website: Guest reviews">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tour-ui">
+            <div class="tour-cap" aria-live="off">01 / 06 · Welcome</div>
+            <div class="tour-segs"><button class="tour-seg on" type="button" aria-label="Show: Welcome"><i></i></button><button class="tour-seg" type="button" aria-label="Show: About"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Suites"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Facilities"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Amenities"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Guest reviews"><i></i></button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Magazine site: kept as a compact card -->
+      <div class="mini-site reveal">
+        <div class="mini-shots" aria-hidden="true">
+          <img src="images/tour-shyam-smriti-1.webp" width="1600" height="909" loading="lazy" decoding="async" alt="">
+          <img src="images/tour-shyam-smriti-2.webp" width="1600" height="909" loading="lazy" decoding="async" alt="">
+        </div>
+        <div>
+          <div class="proj-meta"><span>2026</span><span>Website</span></div>
+          <h3><a href="https://shyam-smriti.onrender.com/" target="_blank" rel="noopener">Shyam Smriti Magazine</a></h3>
+          <p>An online magazine for Sri Gokul Dham — browse the issues, read them online or download the PDF.</p>
+          <a class="proj-link" href="https://shyam-smriti.onrender.com/" target="_blank" rel="noopener">Visit site ↗</a>
+        </div>
+      </div>
+      <p class="stack reveal" style="margin-top:1.1rem"><span>JS</span><span>HTML</span><span>CSS Flex &amp; Grid</span><span>Render</span></p>
+    </div>
+  </section>
+
+  <!-- 03 AUTOMATION & AI (dark) - NEW -->
+  <section id="automation" class="section section--dark">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">03</span> Automation &amp; AI</h2>
+
+      <!-- Intro text on the left, 3D "automation stack" scene on the right (stacks under the text on phones) -->
+      <div class="auto-top">
+        <div>
+          <p class="section-intro reveal">The repetitive work in your business doesn't need a person every time. We connect your tools so it runs by itself.</p>
+          <p class="auto-flow reveal">DATA<span>→</span>WORKFLOW<span>→</span>AI<span>→</span>APP</p>
+        </div>
+
+        <!-- 3D scene: four floating layers with a point of light travelling up through them (purely decorative) -->
+        <div class="stack3d reveal" aria-hidden="true">
+          <div class="stack-scene">
+            <div class="plate p1">DATA</div>
+            <div class="plate p2">WORKFLOW</div>
+            <div class="plate p3">AI</div>
+            <div class="plate p4">APP</div>
+            <i class="packet"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card reveal">
+          <div class="tag">n8n</div>
+          <h3>Workflow automation</h3>
+          <p>n8n workflows that move data and trigger tasks between your tools, without anyone clicking.</p>
+        </div>
+        <div class="card reveal">
+          <div class="tag">Email</div>
+          <h3>Invoice &amp; email follow-ups</h3>
+          <p>Overdue invoices get a polite reminder email automatically, so payments don't slip.</p>
+        </div>
+        <div class="card reveal">
+          <div class="tag">Sheets · AI</div>
+          <h3>Sheets &amp; AI-assisted tools</h3>
+          <p>Google Sheets kept in sync with your apps, plus AI helpers that draft and sort routine work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 CLIENT REVIEWS (light) -->
+  <!-- PLACEHOLDERS: the quote text in ALL of these reviews is sample wording for layout only.
+       - R Prasad and S Jaiswal: replace the quote with their real words (and get their OK) before promoting the site.
+       - The other three are generic placeholders: replace or delete them when you have real reviews. -->
+  <section id="reviews" class="section section--light">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">04</span> Client Reviews</h2>
+
+      <div class="reviews">
+        <!-- Featured review 1 -->
+        <figure class="review review--lead reveal">
+          <blockquote>
+            <p>“We got our website quickly, it looks professional and works smoothly on phones. Exactly what we needed.”</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">R Prasad</span>
+            <span class="biz">Bought a website</span>
+          </figcaption>
+        </figure>
+
+        <!-- Featured review 2 -->
+        <figure class="review review--lead reveal">
+          <blockquote>
+            <p>“The approval app removed the back-and-forth. Requests that used to wait on calls now get approved in one place.”</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">S Jaiswal</span>
+            <span class="biz">Automated approval app, hotel chain</span>
+          </figcaption>
+        </figure>
+
+        <figure class="review reveal">
+          <blockquote>
+            <p>“They took the time to understand how our shop actually runs. The app saves us hours every week.”</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">Rohan S.</span>
+            <span class="biz">Owner, local retail store</span>
+          </figcaption>
+        </figure>
+
+        <figure class="review reveal">
+          <blockquote>
+            <p>“Stock and vendor dues used to live in notebooks. Now everything is in one place and always up to date.”</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">Meera K.</span>
+            <span class="biz">Manager, restaurant</span>
+          </figcaption>
+        </figure>
+
+        <figure class="review reveal">
+          <blockquote>
+            <p>“Clear communication, quick fixes, and they stayed on after launch. Easy to work with.”</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">Anil P.</span>
+            <span class="biz">Director, small hotel</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 ABOUT US (dark) - MOVED here from the top -->
+  <section id="about" class="section section--dark about">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">05</span> About us</h2>
+      <p class="reveal"><strong>DevDuo Studio is a two-person web development studio in India that builds custom web apps and automation for businesses.</strong> We're two developers who started out running businesses ourselves before we started building software for others. ...</p>
+
+      <!-- Two equal cells. Each cell is .ledger-cell (fixes the old double padding). -->
+      <div class="ledger-strip mono reveal">
+        <div class="ledger-cell"><div class="num">India</div><div class="lbl">based</div></div>
+        <div class="ledger-cell"><div class="num">Automating how businesses run</div><div class="lbl">focus</div></div>
+      </div>
+
+      <!-- Tech stack rows -->
+      <div class="skills reveal">
+        <div class="skill-row">
+          <div class="skill-label">Frontend</div>
+          <div class="skill-tags"><span>JS</span><span>React</span><span>HTML</span><span>CSS</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Backend</div>
+          <div class="skill-tags"><span>Node</span><span>Express</span><span>Flask</span><span>Python</span><span>SQLite</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Infra</div>
+          <div class="skill-tags"><span>AWS / Cloud Hosting</span><span>n8n</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER (light) -->
+  <footer id="contact" class="section section--light">
+    <div class="wrap footer-inner">
+      <div class="reveal">
+        <h2>Let's talk</h2>
+        <p>Tell us what your business is spending too much time tracking by hand.</p>
+        <a class="cta" href="mailto:hello@devduo.studio">devduostudio26@gmail.com</a>
+      </div>
+      <div class="fineprint reveal">Shudh &amp; Ankita<br>DevDuo Studio, est. 2026</div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Scroll-reveal: put this just before </body>.
+     Adds the class "in" to every .reveal element when it scrolls into view, with a small stagger between siblings. -->
+<script>
+(function () {
+  var items = document.querySelectorAll('.reveal');
+
+  // Very old browsers: just show everything
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+
+  // Stagger: siblings inside the same parent animate 0.1s after each other
+  items.forEach(function (el) {
+    var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) {
+      return c.classList.contains('reveal');
+    });
+    el.style.setProperty('--d', (sibs.indexOf(el) * 0.1) + 's');
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);   // animate once
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<!-- Project picture galleries: arrows + dots for cards with more than one picture. Put this next to the script above, before </body>. -->
+<script>
+(function () {
+  document.querySelectorAll('.proj-media').forEach(function (box) {
+    var track = box.querySelector('.shots');
+    if (!track) return;
+    var slides = track.querySelectorAll('img');
+    if (slides.length < 2) { box.classList.add('single'); return; }
+
+    var dotsBox = box.querySelector('.gal-dots');
+    slides.forEach(function (_, i) {
+      var d = document.createElement('button');
+      d.type = 'button'; d.setAttribute('aria-label', 'Show picture ' + (i + 1));
+      d.addEventListener('click', function () { go(i); });
+      dotsBox.appendChild(d);
+    });
+    var dots = dotsBox.querySelectorAll('button');
+
+    function current() { return Math.round(track.scrollLeft / track.clientWidth); }
+    function go(i) {
+      i = (i + slides.length) % slides.length;                 // wrap around
+      track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+    }
+    function mark() { var c = current(); dots.forEach(function (d, i) { d.classList.toggle('on', i === c); }); }
+
+    box.querySelector('.gal-prev').addEventListener('click', function () { go(current() - 1); });
+    box.querySelector('.gal-next').addEventListener('click', function () { go(current() + 1); });
+    var ticking = false;
+    track.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(function () { mark(); ticking = false; }); }
+    });
+    mark();
+  });
+})();
+</script>
+
+<!-- Websites tour: steps through the pictures, shows the section label, tilts the 3D window toward the mouse.
+     Put this next to the other scripts, before </body>. -->
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover = window.matchMedia('(hover: hover)').matches;
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  document.querySelectorAll('.tour-stage').forEach(function (stage) {
+    var tilt = stage.querySelector('.tour-tilt');
+    var slides = stage.querySelectorAll('.slide');
+    var segs = stage.querySelectorAll('.tour-seg');
+    var cap = stage.querySelector('.tour-cap');
+    var base = parseFloat(stage.getAttribute('data-ry')) || -14;
+    var idx = 0;
+
+    // after the swing-in has finished, let the window follow the mouse quickly
+    setTimeout(function () { stage.classList.add('live'); }, 1500);
+
+    function show(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle('on', k === idx); });
+      segs.forEach(function (g, k) { g.classList.remove('on'); g.classList.toggle('done', k < idx); });
+      void stage.offsetWidth;                         // restart the progress bar animation
+      segs[idx].classList.add('on');
+      if (cap) {
+        cap.textContent = pad(idx + 1) + ' / ' + pad(slides.length) + ' \u00b7 ' + slides[idx].getAttribute('data-label');
+        cap.classList.remove('swap'); void cap.offsetWidth; cap.classList.add('swap');
+      }
+    }
+    segs.forEach(function (g, k) { g.addEventListener('click', function () { show(k); }); });
+
+    // when the progress bar fills, move on to the next picture
+    stage.addEventListener('animationend', function (e) {
+      if (e.animationName === 'tour-fill' && stage.classList.contains('playing')) { show(idx + 1); }
+    });
+
+    // run only while the window is on screen (saves battery)
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { stage.classList.toggle('playing', e.isIntersecting); });
+      }, { threshold: 0.4 }).observe(stage);
+    } else { stage.classList.add('playing'); }
+
+    // mouse tilt (desktop only)
+    if (!reduce && canHover) {
+      stage.addEventListener('mousemove', function (e) {
+        var r = stage.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5;
+        var y = (e.clientY - r.top) / r.height - 0.5;
+        tilt.style.setProperty('--ry', (base + x * 16) + 'deg');
+        tilt.style.setProperty('--rx', (5 - y * 12) + 'deg');
+      });
+      stage.addEventListener('mouseleave', function () {
+        tilt.style.removeProperty('--ry'); tilt.style.removeProperty('--rx');
+      });
+    }
+  });
+})();
+</script>
+</body>
+</html>

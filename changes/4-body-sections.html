@@ -76,67 +76,209 @@
   </section>
 
   <!-- 02 PROJECTS (light) -->
+  <!-- Picture notes: Bill Tracker and Expense Tracker pictures are real screenshots (sample data).
+       Work Together and Invoice Reminder pictures are illustrations - swap in real screenshots when you have them
+       (files are in /images, ~1040 x 660). -->
   <section id="projects" class="section section--light">
     <div class="wrap">
       <h2 class="reveal"><span class="idx">02</span> Few of our Projects</h2>
 
-      <!-- Wrap each project name in an <a href="..."> to your live app when ready -->
-      <div class="row reveal">
-        <div class="tag">2026</div>
-        <div>
-          <h3><a href="#">Restaurant Inventory &amp; Procurement</a></h3>
-          <p>Stock, kitchen issues, waste, and a vendor ledger with running due balances — deployed on a live AWS server for a working restaurant(A Stock Management App).</p>
+      <div class="proj-grid">
+      <!-- RESTAURANT INVENTORY. Not linked: it is a live system for a working restaurant. Pictures are real screenshots (vendor phone numbers blurred). -->
+      <article class="proj reveal">
+        <div class="proj-media">
+          <div class="shots" tabindex="0" aria-label="Restaurant Inventory &amp; Procurement pictures. Swipe or use the arrow buttons.">
+          <img src="images/restaurant-inventory-intro.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Restaurant Inventory app: the ten modules - dashboard, items, vendors, incoming stock, kitchen issue, waste, vendor payment, ledger, deleted items and CSV import - for multiple outlets">
+          <img src="images/restaurant-inventory-1.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Restaurant Inventory app: Vendor Master with vendor dues and ledger (real screenshot, phone numbers blurred)">
+          <img src="images/restaurant-inventory-2.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Restaurant Inventory app: choose between multiple outlets and import items and vendors from Excel (real screenshot)">
+          </div>
+          <button class="gal-btn gal-prev" type="button" aria-label="Previous picture">‹</button>
+          <button class="gal-btn gal-next" type="button" aria-label="Next picture">›</button>
+          <div class="gal-dots"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2026</span><span>Live app</span></div>
+          <h3>Restaurant Inventory &amp; Procurement</h3>
+          <p>Multi-outlet stock, kitchen issues, waste and a vendor ledger with running due balances, plus Excel import — live on an AWS server for a working restaurant.</p>
           <div class="stack"><span>Node</span><span>Express</span><span>SQLite</span><span>AWS EC2</span></div>
         </div>
-      </div>
+      </article>
 
-      <div class="row reveal">
-        <div class="tag">2026</div>
-        <div>
-          <h3><a href="#">Work Together App</a></h3>
-          <p>Create a privately hosted "pod" with your colleague and share your tasks and watch it get complete(A Productive App).</p>
+      <!-- WORK TOGETHER. Picture is an illustration. Replace with a real screenshot when you have one. -->
+      <article class="proj reveal">
+        <div class="proj-media">
+          <div class="shots" tabindex="0" aria-label="Work Together App pictures. Swipe or use the arrow buttons.">
+          <img src="images/work-together-1.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Illustration of the Work Together app: a shared task list, weekly progress ring and pod members">
+          <img src="images/work-together-2.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Illustration of the Work Together app: create a pod or join with an invite code">
+          <img src="images/work-together-3.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Illustration of the Work Together app: calendar export and import with shared tasks">
+          </div>
+          <button class="gal-btn gal-prev" type="button" aria-label="Previous picture">‹</button>
+          <button class="gal-btn gal-next" type="button" aria-label="Next picture">›</button>
+          <div class="gal-dots"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2026</span><span>Live app</span></div>
+          <h3><a href="https://together-app-idqm.onrender.com/" target="_blank" rel="noopener">Work Together App</a></h3>
+          <p>Create a private “pod” with your partner or team, share tasks and watch them get done together.</p>
           <div class="stack"><span>Python</span><span>Render</span><span>HTML</span><span>CSS</span></div>
+        <a class="proj-link" href="https://together-app-idqm.onrender.com/" target="_blank" rel="noopener">View live app ↗</a>
         </div>
-      </div>
+      </article>
 
-      <div class="row reveal">
-        <div class="tag">2026</div>
-        <div>
-          <h3><a href="#">Expense Tracker</a></h3>
-          <p>Add and categorize expenses, see category totals as a percentage breakdown, filter by date or category.</p>
+      <article class="proj reveal">
+        <div class="proj-media">
+          <div class="shots" tabindex="0" aria-label="Expense Tracker pictures. Swipe or use the arrow buttons.">
+          <img src="images/expense-tracker-1.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Expense Tracker app: add-expense form and expense list (sample data)">
+          <img src="images/expense-tracker-2.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Expense Tracker summary: category totals in percent with a bar chart (sample data)">
+          <img src="images/expense-tracker-3.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Expense Tracker list with filters for date range and category (sample data)">
+          </div>
+          <button class="gal-btn gal-prev" type="button" aria-label="Previous picture">‹</button>
+          <button class="gal-btn gal-next" type="button" aria-label="Next picture">›</button>
+          <div class="gal-dots"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2026</span><span>Live app</span></div>
+          <h3><a href="https://noobiceps.github.io/expense-tracker/" target="_blank" rel="noopener">Expense Tracker</a></h3>
+          <p>Add and categorise expenses, see category totals as a percentage breakdown with a chart, and filter by date or category.</p>
           <div class="stack"><span>Vanilla JS</span><span>Chart</span><span>GitHub Pages</span><span>HTML</span><span>CSS</span></div>
+        <a class="proj-link" href="https://noobiceps.github.io/expense-tracker/" target="_blank" rel="noopener">View live app ↗</a>
         </div>
-      </div>
+      </article>
 
-      <div class="row reveal">
-        <div class="tag">2026</div>
-        <div>
-          <h3><a href="#">Bill Tracker</a></h3>
-          <p>Tracks due dates and autopay status per bill, with a 3-day due-soon flag and a monthly summary view.</p>
+      <article class="proj reveal">
+        <div class="proj-media">
+          <div class="shots" tabindex="0" aria-label="Bill Tracker pictures. Swipe or use the arrow buttons.">
+          <img src="images/bill-tracker-1.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Bill Tracker dashboard on a phone with totals popup (sample data)">
+          <img src="images/bill-tracker-2.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Bill Tracker due-soon and overdue notifications (sample data)">
+          <img src="images/bill-tracker-3.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Bill Tracker calendar highlighting due dates (sample data)">
+          </div>
+          <button class="gal-btn gal-prev" type="button" aria-label="Previous picture">‹</button>
+          <button class="gal-btn gal-next" type="button" aria-label="Next picture">›</button>
+          <div class="gal-dots"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2026</span><span>Live app</span></div>
+          <h3><a href="https://noobiceps.github.io/Bill-Tracker-App/" target="_blank" rel="noopener">Bill Tracker</a></h3>
+          <p>Tracks due dates and autopay status for every bill, with a 3-day due-soon flag, due-date calendar and monthly summary.</p>
           <div class="stack"><span>Vanilla JS</span><span>Express</span><span>SQLite</span></div>
+        <a class="proj-link" href="https://noobiceps.github.io/Bill-Tracker-App/" target="_blank" rel="noopener">View live app ↗</a>
         </div>
-      </div>
+      </article>
 
-      <div class="row reveal">
-        <div class="tag">soon</div>
-        <div>
-          <h3><a href="#">QR Guest Feedback</a></h3>
-          <p>Scan at checkout — happy guests get steered to a public review, low ratings stay internal and pops on your whatsapp instead of going public.</p>
+      <!-- INVOICE REMINDER. Not linked: the link is the private n8n editor. Pictures are illustrations. -->
+      <article class="proj reveal">
+        <div class="proj-media">
+          <div class="shots" tabindex="0" aria-label="Automated Invoice Reminder pictures. Swipe or use the arrow buttons.">
+          <img src="images/invoice-reminder-1.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Illustration: Google Sheet to n8n workflow to client email">
+          <img src="images/invoice-reminder-2.webp" width="1040" height="660" loading="lazy" decoding="async" alt="Illustration of an automatic polite invoice reminder email">
+          </div>
+          <button class="gal-btn gal-prev" type="button" aria-label="Previous picture">‹</button>
+          <button class="gal-btn gal-next" type="button" aria-label="Next picture">›</button>
+          <div class="gal-dots"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2026</span><span>Automation</span></div>
+          <h3>Automated Invoice Reminder</h3>
+          <p>An n8n workflow that reads a Google Sheet of invoices and emails clients a polite follow-up on anything outstanding, on demand.</p>
+          <div class="stack"><span>n8n</span><span>Google Sheets</span><span>Email</span></div>
+        </div>
+      </article>
+
+      <!-- QR GUEST FEEDBACK (coming soon): no picture yet, shows a placeholder -->
+      <article class="proj reveal">
+        <div class="proj-media soon" aria-hidden="true">
+          <svg viewBox="0 0 74 74" fill="none" stroke="#E0B872" stroke-width="3"><rect x="6" y="6" width="22" height="22" rx="3"/><rect x="46" y="6" width="22" height="22" rx="3"/><rect x="6" y="46" width="22" height="22" rx="3"/><path d="M13 13h8v8h-8zM53 13h8v8h-8zM13 53h8v8h-8z" fill="#E0B872" stroke="none"/><path d="M40 8v14M40 34h12M34 46h10M54 46v8M44 56v12M60 60h8M34 66h4" stroke-linecap="round"/></svg>
+          <span>Coming soon</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>Soon</span><span>In progress</span></div>
+          <h3>QR Guest Feedback</h3>
+          <p>Scan at checkout — happy guests get steered to a public review, while low ratings stay internal and pop up on your WhatsApp instead of going public.</p>
           <div class="stack"><span>JS</span><span>Python</span><span>SQL</span></div>
         </div>
+      </article>
+
       </div>
 
-      <!-- Websites row: moved INSIDE the projects section (it used to sit outside any section) -->
-      <div class="row reveal">
-        <div class="tag">2026</div>
-        <div>
-          <h3><a href="#">Websites</a></h3>
-          <p><a href ="https://hotelmahal.in/">Hotel Mahal</a></p>
-          <p><a href="https://www.hotelredvelvet.in/">Hotel Red Velvet</a></p>
-          <p><a href="https://shyam-smriti.onrender.com/">Charitable Project</a></p>
-          <div class="stack"><span>JS</span><span>HTML</span><span>CSS Flex & Grid</span><span>Render</span></div>
+      <!-- WEBSITES TOUR: a curated 3D walk-through of each site (stills from screen recordings, cursor removed).
+           Each .slide is images/tour-<site>-<n>.webp; every slide needs a matching <button class="tour-seg"> and a data-label. -->
+      <h3 class="subhead reveal">Websites we've built</h3>
+      <div class="tour-row reveal">
+        <div class="tour-copy">
+          <div class="proj-meta"><span>2026</span><span>Website</span></div>
+          <h3><a href="https://hotelmahal.in/" target="_blank" rel="noopener">Hotel Mahal</a></h3>
+          <p>A website for a hotel in Chinsurah, Hooghly — rooms, restaurant and banquet hall with a photo gallery, plus enquiry and WhatsApp buttons.</p>
+          <ul class="tour-pages" aria-label="Pages"><li>Rooms</li><li>Restaurant</li><li>Banquet</li><li>Gallery</li><li>Contact</li></ul>
+          <a class="proj-link" href="https://hotelmahal.in/" target="_blank" rel="noopener">Visit site ↗</a>
+        </div>
+        <div class="tour-stage" data-ry="-12">
+          <div class="tour-tilt">
+            <div class="tour-sway">
+              <div class="tour-frame">
+                <div class="tour-bar"><i></i><i></i><i></i><span class="url">hotelmahal.in</span></div>
+                <div class="tour-view">
+                  <img class="slide on" src="images/tour-hotel-mahal-1.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Welcome" alt="Hotel Mahal website: Welcome">
+                  <img class="slide" src="images/tour-hotel-mahal-2.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Rooms" alt="Hotel Mahal website: Rooms">
+                  <img class="slide" src="images/tour-hotel-mahal-3.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Room gallery" alt="Hotel Mahal website: Room gallery">
+                  <img class="slide" src="images/tour-hotel-mahal-4.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Dining" alt="Hotel Mahal website: Dining">
+                  <img class="slide" src="images/tour-hotel-mahal-5.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Banquet hall" alt="Hotel Mahal website: Banquet hall">
+                  <img class="slide" src="images/tour-hotel-mahal-6.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Contact" alt="Hotel Mahal website: Contact">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tour-ui">
+            <div class="tour-cap" aria-live="off">01 / 06 · Welcome</div>
+            <div class="tour-segs"><button class="tour-seg on" type="button" aria-label="Show: Welcome"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Rooms"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Room gallery"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Dining"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Banquet hall"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Contact"><i></i></button></div>
+          </div>
         </div>
       </div>
+
+      <div class="tour-row flip reveal">
+        <div class="tour-copy">
+          <div class="proj-meta"><span>2026</span><span>Website</span></div>
+          <h3><a href="https://www.hotelredvelvet.in/" target="_blank" rel="noopener">Hotel Red Velvet</a></h3>
+          <p>A website for a hotel in Garifa, Naihati — rooms and suites, amenities, nearby attractions and guest reviews, with Book Now and WhatsApp.</p>
+          <ul class="tour-pages" aria-label="Pages"><li>Rooms</li><li>Amenities</li><li>Attractions</li><li>Gallery</li><li>Contact</li></ul>
+          <a class="proj-link" href="https://www.hotelredvelvet.in/" target="_blank" rel="noopener">Visit site ↗</a>
+        </div>
+        <div class="tour-stage" data-ry="12">
+          <div class="tour-tilt">
+            <div class="tour-sway">
+              <div class="tour-frame">
+                <div class="tour-bar"><i></i><i></i><i></i><span class="url">hotelredvelvet.in</span></div>
+                <div class="tour-view">
+                  <img class="slide on" src="images/tour-hotel-red-velvet-1.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Welcome" alt="Hotel Red Velvet website: Welcome">
+                  <img class="slide" src="images/tour-hotel-red-velvet-2.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="About" alt="Hotel Red Velvet website: About">
+                  <img class="slide" src="images/tour-hotel-red-velvet-3.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Suites" alt="Hotel Red Velvet website: Suites">
+                  <img class="slide" src="images/tour-hotel-red-velvet-4.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Facilities" alt="Hotel Red Velvet website: Facilities">
+                  <img class="slide" src="images/tour-hotel-red-velvet-5.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Amenities" alt="Hotel Red Velvet website: Amenities">
+                  <img class="slide" src="images/tour-hotel-red-velvet-6.webp" width="1600" height="909" loading="lazy" decoding="async" data-label="Guest reviews" alt="Hotel Red Velvet website: Guest reviews">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tour-ui">
+            <div class="tour-cap" aria-live="off">01 / 06 · Welcome</div>
+            <div class="tour-segs"><button class="tour-seg on" type="button" aria-label="Show: Welcome"><i></i></button><button class="tour-seg" type="button" aria-label="Show: About"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Suites"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Facilities"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Amenities"><i></i></button><button class="tour-seg" type="button" aria-label="Show: Guest reviews"><i></i></button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Magazine site: kept as a compact card -->
+      <div class="mini-site reveal">
+        <div class="mini-shots" aria-hidden="true">
+          <img src="images/tour-shyam-smriti-1.webp" width="1600" height="909" loading="lazy" decoding="async" alt="">
+          <img src="images/tour-shyam-smriti-2.webp" width="1600" height="909" loading="lazy" decoding="async" alt="">
+        </div>
+        <div>
+          <div class="proj-meta"><span>2026</span><span>Website</span></div>
+          <h3><a href="https://shyam-smriti.onrender.com/" target="_blank" rel="noopener">Shyam Smriti Magazine</a></h3>
+          <p>An online magazine for Sri Gokul Dham — browse the issues, read them online or download the PDF.</p>
+          <a class="proj-link" href="https://shyam-smriti.onrender.com/" target="_blank" rel="noopener">Visit site ↗</a>
+        </div>
+      </div>
+      <p class="stack reveal" style="margin-top:1.1rem"><span>JS</span><span>HTML</span><span>CSS Flex &amp; Grid</span><span>Render</span></p>
     </div>
   </section>
 
